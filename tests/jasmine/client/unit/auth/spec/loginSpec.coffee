@@ -2,11 +2,15 @@ describe 'Login', ->
   testUser =
     email : 'test@email.com'
     password : 'testpassword'
+
+  login = ->
+    App.api.login testUser.email, testUser.password
+    
   
   it 'should call Meteor.loginWithPassword', ->
     spyOn Meteor, 'loginWithPassword'
 
-    App.api.login testUser.email, testUser.password
+    login()
 
     expect(Meteor.loginWithPassword).toHaveBeenCalledWith 'test@email.com', 'testpassword', jasmine.any(Function)
 
@@ -15,7 +19,7 @@ describe 'Login', ->
       cb()
     spyOn FlowRouter, 'go'
 
-    App.api.login testUser.email, testUser.password
+    login()
 
     expect(FlowRouter.go).toHaveBeenCalledWith '/dashboard'
 
@@ -24,7 +28,7 @@ describe 'Login', ->
       cb { reason: 'Login unsuccessful' }
     spyOn App.utils.notify, 'error'
 
-    App.api.login testUser.email, testUser.password
+    login()
 
     expect( App.utils.notify.error ).toHaveBeenCalledWith 'Login unsuccessful'
 
@@ -33,5 +37,6 @@ describe 'Login', ->
       cb { reason: 'Login unsuccessful' }
     spyOn FlowRouter, 'go'
 
-    App.api.login testUser.email, testUser.password
+    login()
+    
     expect( FlowRouter.go ).not.toHaveBeenCalled()
