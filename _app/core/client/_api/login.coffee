@@ -1,8 +1,14 @@
 login = (email, password) ->
-  console.log "#{email} is logging in"
-
   check email, String
   check password, String
+
+  if !email
+    App.utils.notify.error 'Email not specified'
+    return
+
+  if !password
+    App.utils.notify.error 'Password not specified'
+    return
 
   Meteor.loginWithPassword email, password, (error) =>
     if error then App.utils.notify.error error.reason
