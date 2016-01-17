@@ -38,5 +38,19 @@ describe 'Login', ->
     spyOn FlowRouter, 'go'
 
     login()
-    
+
     expect( FlowRouter.go ).not.toHaveBeenCalled()
+
+  it 'should fail to login and notify error if email or password blank', ->
+    spyOn( Meteor, 'loginWithPassword' )
+    spyOn App.utils.notify, 'error'
+
+    App.api.login '', testUser.password
+
+    expect( App.utils.notify.error ).toHaveBeenCalled()
+    expect( Meteor.loginWithPassword ).not.toHaveBeenCalled()
+
+    App.api.login testUser.email, ''
+
+    expect( App.utils.notify.error ).toHaveBeenCalled()
+    expect( Meteor.loginWithPassword ).not.toHaveBeenCalled()
