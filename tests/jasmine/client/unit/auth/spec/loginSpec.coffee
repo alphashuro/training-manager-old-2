@@ -3,7 +3,7 @@ describe 'Login', ->
     email : 'test@email.com'
     password : 'testpassword'
   
-  it 'should call Meteor login API', ->
+  it 'should call Meteor.loginWithPassword', ->
     spyOn Meteor, 'loginWithPassword'
 
     App.api.login testUser.email, testUser.password
