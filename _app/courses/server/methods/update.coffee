@@ -19,4 +19,10 @@ Meteor.methods
     check duration, Number
     check price, Number
 
-    App.Collections.Classes.update _id, { $set: { title, description, duration, price } }
+    App.Collections.Classes.update _id, { 
+      $set: { 
+        title, 
+        description, 
+        duration, 
+        price 
+      }}
