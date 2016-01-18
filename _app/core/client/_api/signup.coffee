@@ -1,9 +1,6 @@
-signup = ({email, password, profile }) ->
-  check email, String
-  check password, String
-  check profile, Object
+signup = ({ email, password, org, name }) ->
 
-  if !profile.org
+  if !org
     App.utils.notify.error 'Organization not specified'
     return
 
@@ -15,10 +12,11 @@ signup = ({email, password, profile }) ->
     App.utils.notify.error 'Passowrd not specified'
     return
 
-  Accounts.createUser { email, password, profile }, ( error, userId ) ->
+  unless name
+    name = ''
+
+  Meteor.call 'create/user', { email, password, org, name }, ( error ) ->
     if error then App.utils.notify.error error.reason
-    else  
-      Roles.addUsersToRoles userId, 'admin', profile.org
-      FlowRouter.go '/dashboard'
+    App.api.login email, password  
 
 App.api.signup = signup
