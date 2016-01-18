@@ -1,16 +1,24 @@
-publicRoutes = FlowRouter.group()
+App.routes.public = FlowRouter.group()
 
-publicRoutes.route '/',
+App.routes.public.route '/',
   name: 'index'
   action: ->
     RiotLayout.render 'index'
 
-publicRoutes.route '/signup',
+App.routes.public.route '/signup',
   name: 'signup'
   action: ->
     RiotLayout.render 'signup'
 
-publicRoutes.route '/login',
+App.routes.public.route '/login',
   name: 'login'
   action: ->
     RiotLayout.render 'login'
+
+App.routes.private = FlowRouter.group()
+
+App.routes.private.route '/dashboard',
+  name: 'dashboard'
+  action: ->
+    RiotLayout.render 'app-layout',
+      main: '<dashboard></dashboard>'
