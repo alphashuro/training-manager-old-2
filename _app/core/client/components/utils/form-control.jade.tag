@@ -5,9 +5,9 @@ form-control
       type='{opts.type}' 
       class='form-control' 
       id='{opts.name}' 
-      name='{opts.name}'
-      placeholder='{opts.label}')
+      name='{opts.name}Input'
+      placeholder='{opts.label}'
+      value='{opts.value}')
 
   script(type='coffee').
-    @value = ->
-      this[opts.name].value
+    @getValue = -> this[opts.name+'Input'].value
