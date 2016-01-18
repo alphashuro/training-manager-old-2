@@ -1,7 +1,4 @@
 login = (email, password) ->
-  check email, String
-  check password, String
-
   if !email
     App.utils.notify.error 'Email not specified'
     return
