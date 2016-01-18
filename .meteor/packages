@@ -15,9 +15,9 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
+baysao:riot-meteor-data
 baysao:riotjs
 baysao:riot-layout
-baysao:riot-meteor-data
 
 baysao:riotjs-preprocessor-init
 
@@ -32,3 +32,9 @@ themeteorchef:bert
 sanjo:jasmine
 velocity:html-reporter
 check
+training-manager:fixtures
+meteortoys:allthings
+babrahams:constellation
+constellation:velocity
+yelongren:constellation-reload
+dburles:collection-helpers
