@@ -1,5 +1,5 @@
 new-course
-  h4.page-header
+  h2.page-header
     | Add a course
 
   .col-md-6.col-md-offset-3

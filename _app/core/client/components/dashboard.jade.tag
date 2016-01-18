@@ -1,2 +1,2 @@
 dashboard
-  h4.page-header Dashboard
+  h2.page-header Dashboard

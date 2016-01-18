@@ -1,5 +1,5 @@
 courses-page
-  h4.page-header 
+  h2.page-header 
     | Courses
     .text-right
       a.btn.btn-default(href='/courses/new') New Course
