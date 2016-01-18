@@ -49,9 +49,39 @@ createCourses = ->
 resetCourses = ->
   App.Collections.Courses.remove {}
 
+# Classes
+classes = [
+  { 
+    title: 'Class 1' 
+    description: 'A class for the course'
+    duration: 2
+    price: 1000
+  }
+  {
+    title: 'Class 2'
+    description: 'Another class for the course'
+    duration: 4
+    price: 2000
+  }
+]
+
+createClasses = ->
+  courses = App.Collections.Courses.find().fetch()
+
+  for course in courses
+    for _class in classes
+      _class.courseId = course._id
+      App.Collections.Classes.insert _class
+
+resetClasses = -> App.Collections.Classes.remove {}
+
 Meteor.methods
   'fixtures': ->
     resetUsers()
     createUsers()
+    
     resetCourses()
     createCourses()
+
+    resetClasses()
+    createClasses()
