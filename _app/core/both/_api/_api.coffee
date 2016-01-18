@@ -1,6 +1,6 @@
 @App =
   api: {}
-  collections: {}
-  services: {}
+  Collections: {}
+  Services: {}
   utils: {}
-  
+  routes: {}
