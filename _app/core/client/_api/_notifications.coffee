@@ -5,6 +5,14 @@ error = (message) -> Bert.alert {
   style: 'fixed-top'
 }
 
+success = (message) -> Bert.alert {
+  title: 'Success'
+  message,
+  type: 'success'
+  style: 'growl-top-right'
+}
+
 App.utils.notify = {
-  error
+  error,
+  success
 }
