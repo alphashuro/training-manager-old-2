@@ -133,7 +133,10 @@ templating@1.1.6-modules.4
 templating-tools@1.0.1-modules.4
 themeteorchef:bert@2.1.0
 tracker@1.0.10-modules.4
+training-manager:core@0.0.1
 training-manager:fixtures@0.0.1
+training-manager:lib@0.0.1
+training-manager:notifications@0.0.1
 twbs:bootstrap@3.3.6
 u2622:persistent-session@0.4.4
 ui@1.0.8

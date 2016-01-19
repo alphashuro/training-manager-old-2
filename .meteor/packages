@@ -39,3 +39,6 @@ constellation:velocity
 yelongren:constellation-reload
 dburles:collection-helpers
 reywood:publish-composite
+training-manager:lib
+training-manager:core
+training-manager:notifications
