@@ -156,18 +156,48 @@ createFacilitators = ->
 resetFacilitators = ->
   Facilitators.remove {}
 
+# Registrations
+
+createRegistrations = ->
+  users = Meteor.users.find().fetch()
+
+  courses = App.Collections.Courses.find().fetch()
+  clients = App.Collections.Clients.find().fetch()
+  facilitators = App.Collections.Facilitators.find().fetch()
+
+  for user in users
+    for facilitator in facilitators
+      for course in courses
+        for client in clients
+          students = client.students()
+          classes = course.classes()
+            
+          registration = 
+            clientId: client._id
+            courseId: course._id
+            facilitatorId: facilitator._id
+            owner: user._id
+            date: chance.date { year: 2016, month: 0 }
+
+          Registrations.insert registration
+
+resetRegistrations = ->
+  Registrations.remove {}
+
 Fixtures = {
   reset: -> 
     @users.reset()
     @courses.reset()
     @clients.reset()
     @facilitators.reset()
+    @registrations.reset()
 
   create: -> 
     @users.create()
     @courses.create()
     @clients.create()
     @facilitators.create()
+    @registrations.create()
 
   seed: -> 
     Meteor.call 'fixtures/reset', ( error ) ->
@@ -185,6 +215,9 @@ Fixtures = {
   facilitators:
     create: createFacilitators
     reset: resetFacilitators
+  registrations:
+    create: createRegistrations
+    reset: resetRegistrations
 }
 
 Meteor.methods
