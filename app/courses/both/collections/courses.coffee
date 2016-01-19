@@ -1,4 +1,4 @@
-App.Collections.Courses = new Mongo.Collection 'courses'
+App.Collections.Courses = @Courses = new Mongo.Collection 'courses'
 
 App.Collections.Courses.allow
   insert: -> false
