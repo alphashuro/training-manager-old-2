@@ -8,3 +8,7 @@ Clients.deny
   insert: -> true
   update: -> true
   remove: -> true
+
+Clients.helpers
+  students: ->
+    Students.find clientId: @_id
