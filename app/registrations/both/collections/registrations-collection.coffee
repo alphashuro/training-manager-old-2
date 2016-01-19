@@ -8,3 +8,7 @@ Registrations.deny
   insert: -> true
   update: -> true
   remove: -> true
+
+Registrations.helpers
+  facilitator: -> Facilitators.findOne @facilitatorId
+  course: -> Courses.findOne @courseId
