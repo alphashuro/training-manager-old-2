@@ -114,6 +114,7 @@ reactive-var@1.0.6
 reload@1.1.5-modules.4
 retry@1.0.4
 reywood:publish-composite@1.4.2
+risul:chance@1.0.8
 routepolicy@1.0.7-modules.4
 sanjo:jasmine@0.21.0
 sanjo:karma@3.1.0
