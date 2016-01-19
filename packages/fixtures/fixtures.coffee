@@ -1,11 +1,7 @@
-# Orgs
-resetOrgs = -> App.Collections.Orgs.remove {}
-
 # Users
 users = 
-  admins: [
+  orgs: [
     {
-      name: 'Alpha Shuro'
       org: 'AeP IT'
       password: 'password'
       email: 'alpha@aepit.co.za'
@@ -13,17 +9,13 @@ users =
   ]
 
 createUsers = ->
-  resetOrgs()
-
-  for admin in users.admins
-    orgId = App.Collections.Orgs.insert name: admin.org
+  for org in users.orgs
 
     userId = Accounts.createUser
-      email: admin.email
-      password: admin.password
+      email: org.email
+      password: org.password
       profile: 
-        orgId: orgId
-        name: admin.name
+        org: org.org
 
     Roles.addUsersToRoles userId, 'admin'
 
@@ -36,20 +28,29 @@ courses = [
     description : 'A course course-like'
     maxStudents : 10
   }
+  {
+    title : 'Course 2'
+    description : 'A course not unlike another course'
+    maxStudents : 20
+  }
 ]
 
 createCourses = ->
-  orgs = App.Collections.Orgs.find().fetch()
+  users = Meteor.users.find().fetch()
 
-  for org in orgs
+  for user in users
     for course in courses
-      course.orgId = org._id
-      App.Collections.Courses.insert course
+      course.owner = user._id
+      courseId = App.Collections.Courses.insert course
+
+  createClasses()
 
 resetCourses = ->
+  resetClasses()
+  
   App.Collections.Courses.remove {}
 
-# Classes
+  # Classes
 classes = [
   { 
     title: 'Class 1' 
@@ -75,13 +76,123 @@ createClasses = ->
 
 resetClasses = -> App.Collections.Classes.remove {}
 
-Meteor.methods
-  'fixtures': ->
-    resetUsers()
-    createUsers()
-    
-    resetCourses()
-    createCourses()
+# Clients
+clients = [
+  {
+    name : 'Client 1'
+    phone : '0161234567'
+    email : 'client1@email.com'
+  }
+  {
+    name : 'Client 2'
+    phone : '0123134512'
+    email : 'client2@email.com'
+  }
+]
 
-    resetClasses()
-    createClasses()
+createClients = ->
+  users = Meteor.users.find().fetch()
+
+  for user in users
+    for client in clients
+      client.owner = user._id
+
+      Clients.insert client
+
+  createStudents()
+
+resetClients = ->
+  resetStudents()
+
+  Clients.remove {}
+
+  # Students
+students = [
+  {
+    name : 'Student 1'
+    phone : '0731231242'
+  }
+  {
+    name : 'Student 2'
+    phone : '0623983242'
+  }
+]
+
+createStudents = ->
+  clients = Clients.find().fetch()
+
+  for client in clients
+    for student in students
+      student.clientId = client._id
+
+      Students.insert student
+
+resetStudents = ->
+  Students.remove {}
+
+#Facilitators
+facilitators = [
+  {
+    name : 'Facilitator 1'
+    phone : '1245431451'
+    email : 'facilitator1@email.com'
+  }
+  {
+    name : 'Facilitator 2'
+    phone : '2322352342'
+    email : 'facilitator2@email.com'
+  }
+]
+
+createFacilitators = ->
+  users = Meteor.users.find().fetch()
+
+  for user in users
+    for facilitator in facilitators
+      facilitator.owner = user._id
+
+      Facilitators.insert facilitator
+
+resetFacilitators = ->
+  Facilitators.remove {}
+
+Fixtures = {
+  reset: -> 
+    @users.reset()
+    @courses.reset()
+    @clients.reset()
+    @facilitators.reset()
+
+  create: -> 
+    @users.create()
+    @courses.create()
+    @clients.create()
+    @facilitators.create()
+
+  seed: -> 
+    Meteor.call 'fixtures/reset', ( error ) ->
+      unless error then Meteor.call 'fixtures/create'
+
+  users:
+    create: createUsers
+    reset: resetUsers
+  courses:
+    create: createCourses
+    reset: resetCourses
+  clients:
+    create: createClients
+    reset: resetClients
+  facilitators:
+    create: createFacilitators
+    reset: resetFacilitators
+}
+
+Meteor.methods
+  'fixtures/reset': ->
+    Fixtures.reset()
+
+  'fixtures/create': ->
+    Fixtures.create()
+
+  'fixtures/seed': ->
+    Fixtures.seed()
