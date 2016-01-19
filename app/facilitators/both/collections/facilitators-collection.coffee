@@ -1,0 +1,10 @@
+App.Collections.Facilitators = @Facilitators = new Mongo.Collection 'facilitators'
+
+Facilitators.allow
+  insert: -> false
+  update: -> false
+  remove: -> false
+Facilitators.deny
+  insert: -> true
+  update: -> true
+  remove: -> true
