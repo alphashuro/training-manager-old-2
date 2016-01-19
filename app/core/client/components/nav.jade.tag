@@ -12,7 +12,7 @@ nav-menu
           span.icon-bar
           span.icon-bar
 
-        a.navbar-brand( href='#' ) { data.org.name }
+        a.navbar-brand( href='#' ) { data.user.profile.org }
 
       #main-navbar.collapse.navbar-collapse
         ul.nav.navbar-nav
@@ -50,9 +50,7 @@ nav-menu
       unless user
         FlowRouter.go 'login'
 
-      org = App.Collections.Orgs.findOne user.profile.orgId
-
-      { user, org }
+      { user }
     @mixin 'RiotMeteorData'
 
     @logout = ->

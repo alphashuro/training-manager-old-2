@@ -1,21 +1,17 @@
 Meteor.methods
-  'create/user': ({ email, password, org, name }) ->
+  'create/user': ({ email, password, org }) ->
     check email, String
     check password, String
     check org, String
-    check name, String
 
     profile = {
-      name
+      org
     }
 
-    orgExists = App.Collections.Orgs.findOne name : org
+    orgExists = Meteor.users.findOne "profile.org" : org
 
     if orgExists
       throw new Meteor.error 'org-exists', "#{org} already exists."
-    else
-      orgId = App.Collections.Orgs.insert name: org
-      profile.orgId = orgId
 
     userId = Accounts.createUser { email, password, profile }
 

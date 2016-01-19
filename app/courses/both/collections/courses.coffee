@@ -10,6 +10,8 @@ App.Collections.Courses.deny
   update: -> true
   remove: -> true
 
+
+# todo fix helper methods
 App.Collections.Courses.helpers
   duration: -> 0
   price: -> 0

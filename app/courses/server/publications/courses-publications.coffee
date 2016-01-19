@@ -4,11 +4,7 @@ Meteor.publishComposite 'courses', {
       unless Roles.userIsInRole @userId, 'admin'
         return
 
-      user = Meteor.users.findOne @userId
-
-      { orgId } = user.profile
-
-      return App.Collections.Courses.find { orgId }
+      return App.Collections.Courses.find { owner: @userId }
   children: [
     {
       find: ( course ) ->
@@ -20,11 +16,8 @@ Meteor.publishComposite 'courses', {
 Meteor.publishComposite 'course', {
   find: (_id) ->
     if (@userId)
-      user = Meteor.users.findOne @userId
 
-      { orgId } = user.profile
-
-      return App.Collections.Courses.find {_id, orgId }
+      return App.Collections.Courses.find { owner: @userId }
   children: [
     {
       find: ( course ) ->

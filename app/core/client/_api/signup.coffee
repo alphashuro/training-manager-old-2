@@ -1,7 +1,7 @@
-signup = ({ email, password, org, name }) ->
+signup = ({ email, password, org }) ->
 
   if !org
-    App.utils.notify.error 'Organization not specified'
+    App.utils.notify.error 'Organization name not specified'
     return
 
   if !email
@@ -12,10 +12,7 @@ signup = ({ email, password, org, name }) ->
     App.utils.notify.error 'Passowrd not specified'
     return
 
-  unless name
-    name = ''
-
-  Meteor.call 'create/user', { email, password, org, name }, ( error ) ->
+  Meteor.call 'create/user', { email, password, org }, ( error ) ->
     if error then App.utils.notify.error error.reason
     App.api.login email, password  
 

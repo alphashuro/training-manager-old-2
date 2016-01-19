@@ -1,13 +1,13 @@
-create = ( { title, description, maxStudents } ) ->
-  Meteor.call 'create/course', { title, description, maxStudents }, ( error ) ->
+create = ( course ) ->
+  Meteor.call 'create/course', course, ( error ) ->
     if error
       App.utils.notify.error error.reason
     else
       App.utils.notify.success 'Course Created!'
       FlowRouter.go '/courses'
 
-update = ( { _id, title, description, maxStudents } ) ->
-  Meteor.call 'update/course', { _id, title, description, maxStudents }, ( error ) ->
+update = ( course ) ->
+  Meteor.call 'update/course', course, ( error ) ->
     if error
       App.utils.notify.error error.reason
 

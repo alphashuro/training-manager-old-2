@@ -26,7 +26,9 @@ course-detail
         button.btn.btn-success Save
 
     .col-md-8
-      h3.page-header Classes
+      h3.page-header 
+        | Classes
+        button.btn.btn-default New
 
       ul.list-group
         li.list-group-item( each='{data.classes}' )
@@ -55,7 +57,7 @@ course-detail
                 value='{price}')
 
             button.btn.btn-success Save
-            button.btn.btn-warning(type='button' onclick='{remove}')
+            button.btn.btn-danger(type='button' onclick='{remove}')
               i.glyphicon.glyphicon-trash
 
   script( type='coffee' ).

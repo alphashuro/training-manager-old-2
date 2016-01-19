@@ -1,5 +1,3 @@
-App.routes.public = FlowRouter.group()
-
 App.routes.public.route '/',
   name: 'index'
   action: ->
@@ -14,8 +12,6 @@ App.routes.public.route '/login',
   name: 'login'
   action: ->
     RiotLayout.render 'login'
-
-App.routes.private = FlowRouter.group()
 
 App.routes.private.route '/dashboard',
   name: 'dashboard'

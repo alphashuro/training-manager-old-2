@@ -1,10 +1,10 @@
 courses-page
   h2.page-header 
     | Courses
-    .text-right
-      a.btn.btn-default(href='/courses/new') New Course
+  .text-right
+    a.btn.btn-default(href='/courses/new') New Course
 
-  table.table.table-hover
+  table.table
     thead
       tr
         th Title
@@ -33,6 +33,6 @@ courses-page
     @mixin 'RiotMeteorData'
 
     @remove = (e) ->
-      { _id, name } = e.item;
+      { _id, title } = e.item;
 
       if confirm("You are about to delete #{ name }, this is irreversible. Continue?") then App.api.courses.remove _id

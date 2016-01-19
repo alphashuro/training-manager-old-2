@@ -1,16 +1,14 @@
 Meteor.methods
-  'update/course': ( { _id, title, description, maxStudents } ) ->
-    check _id, String
+  'create/class': ( { title, description, duration, price, courseId } ) ->
     check title, String
     check description, String
-    check maxStudents, Number
+    check duration, Number
+    check price, Number
+    check courseId, String
 
-    App.Collections.Courses.update _id, { 
-      $set: { 
-        title, 
-        description, 
-        maxStudents 
-      }}
+    App.Collections.Classes.insert {
+      title, description, duration, price, courseId
+    }
 
   'update/class': ( { _id, title, description, duration, price } ) ->
     check _id, String
@@ -26,3 +24,8 @@ Meteor.methods
         duration, 
         price 
       }}
+      
+  'remove/class': ( id ) ->
+    check id, String
+
+    App.Collections.Classes.remove id
