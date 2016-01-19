@@ -170,19 +170,25 @@ createRegistrations = ->
       for course in courses
         for client in clients
           students = client.students()
-          classes = course.classes()
             
           registration = 
-            clientId: client._id
+            students: students.map (s) => s._id
             courseId: course._id
             facilitatorId: facilitator._id
             owner: user._id
-            date: chance.date { year: 2016, month: 0 }
 
           Registrations.insert registration
+          
+  createSessions()
+  resetSessions()
 
 resetRegistrations = ->
   Registrations.remove {}
+
+createSessions = ->
+# date: chance.date { year: 2016, month: 0 }
+resetSessions = ->
+  Sessions.remove {}
 
 Fixtures = {
   reset: -> 
