@@ -29,8 +29,8 @@ accounts-password
 kadira:flow-router
 coffeescript
 themeteorchef:bert
-sanjo:jasmine
-velocity:html-reporter
+#sanjo:jasmine
+#velocity:html-reporter
 check
 training-manager:fixtures
 meteortoys:allthings
@@ -43,3 +43,6 @@ training-manager:lib
 training-manager:core
 training-manager:notifications
 risul:chance
+constellation:schema
+fourquet:anti-gravity
+momentjs:moment
