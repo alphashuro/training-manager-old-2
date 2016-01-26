@@ -8,3 +8,6 @@ Sessions.deny
   insert: -> true
   update: -> true
   remove: -> true
+
+Sessions.helpers
+  registration: -> Registrations.findOne @registrationId
