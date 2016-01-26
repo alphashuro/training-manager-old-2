@@ -19,7 +19,8 @@ Package.onUse(function(api) {
     both: [
       'coffeescript',
       'ecmascript',
-      'kadira:flow-router@2.10.0'
+      'kadira:flow-router@2.10.0',
+      'risul:chance@1.0.8'
     ]
   }
 
