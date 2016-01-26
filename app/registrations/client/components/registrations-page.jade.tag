@@ -10,12 +10,14 @@ registrations-page
         th Course
         th Facilitator
         th Students
+        th Next Session
         th Actions
     tbody
       tr( each='{data.registrations}' )
         td { course().title }
         td { facilitator().name }
         td { students.length }
+        td { moment(nextSession().date ).calendar() }
         td
           a( href="/registrations/detail/{_id}" ).btn.btn-default View
           button( onlick='{remove}' ).btn.btn-danger
