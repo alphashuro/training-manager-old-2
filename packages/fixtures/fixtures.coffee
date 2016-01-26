@@ -1,3 +1,5 @@
+chance = new Chance('training-app-fixtures')
+
 # Users
 users = 
   orgs: [
@@ -172,21 +174,31 @@ createRegistrations = ->
           students = client.students()
             
           registration = 
-            students: students.map (s) => s._id
+            students: students.map (s) => s._id 
             courseId: course._id
             facilitatorId: facilitator._id
             owner: user._id
 
           Registrations.insert registration
           
-  createSessions()
   resetSessions()
+  createSessions()
 
 resetRegistrations = ->
   Registrations.remove {}
 
 createSessions = ->
-# date: chance.date { year: 2016, month: 0 }
+  registrations = App.Collections.Registrations.find().fetch()
+
+  for registration in registrations
+    sessions = registration.course().classes().fetch().map (c) => {
+      "class": c
+    }
+    for session in sessions
+      session.registrationId = registration._id
+      session.date = chance.date { year: 2016, month : _.sample [ 0, 1, 2 ] }
+      Sessions.insert session
+
 resetSessions = ->
   Sessions.remove {}
 
