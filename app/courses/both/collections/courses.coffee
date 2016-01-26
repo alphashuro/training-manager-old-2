@@ -15,3 +15,4 @@ App.Collections.Courses.deny
 App.Collections.Courses.helpers
   duration: -> 0
   price: -> 0
+  classes: -> App.Collections.Classes.find courseId: @_id
