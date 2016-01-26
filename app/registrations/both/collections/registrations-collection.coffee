@@ -12,3 +12,5 @@ Registrations.deny
 Registrations.helpers
   facilitator: -> Facilitators.findOne @facilitatorId
   course: -> Courses.findOne @courseId
+  nextSession: ->
+    session = Sessions.findOne { registrationId: @_id, date: $gt: new Date() } , $sort: date: 1
