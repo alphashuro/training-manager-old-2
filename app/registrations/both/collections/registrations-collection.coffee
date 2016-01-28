@@ -14,3 +14,4 @@ Registrations.helpers
   course: -> Courses.findOne @courseId
   nextSession: ->
     session = Sessions.findOne { registrationId: @_id, date: $gt: new Date() } , $sort: date: 1
+  sessions: -> Sessions.find registrationId: @_id
