@@ -44,6 +44,11 @@ client-detail
                 name='phone'
                 label='Phone'
                 value='{phone}')
+              form-control(
+                type='email'
+                name='email'
+                label='Email'
+                value='{email}')
 
             button.btn.btn-success Save
             button.btn.btn-danger(type='button' onclick='{remove}')
