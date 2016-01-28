@@ -26,12 +26,12 @@ Meteor.publishComposite 'registrations', {
 }
 
 Meteor.publishComposite 'registration', {
-  find: ->
+  find: (_id) ->
     if ( @userId )
       unless Roles.userIsInRole @userId, 'admin'
         return
 
-      return Registrations.find owner: @userId
+      return Registrations.find { _id, owner: @userId }
   children: [
     {
       find: ( registration ) ->
