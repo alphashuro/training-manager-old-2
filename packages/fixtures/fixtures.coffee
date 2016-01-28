@@ -113,10 +113,12 @@ students = [
   {
     name : 'Student 1'
     phone : '0731231242'
+    email : 'student1@anemail.com'
   }
   {
     name : 'Student 2'
     phone : '0623983242'
+    email : 'student2@otheremail.com'
   }
 ]
 
