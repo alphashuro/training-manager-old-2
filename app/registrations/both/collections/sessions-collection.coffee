@@ -11,3 +11,5 @@ Sessions.deny
 
 Sessions.helpers
   registration: -> Registrations.findOne @registrationId
+  calendar: -> moment( @date ).calendar()
+  endTime: -> moment( @date ).add( @class.duration, 'hours' ).format('LT')
