@@ -176,7 +176,7 @@ createRegistrations = ->
           students = client.students()
             
           registration = 
-            students: students.map (s) => s._id 
+            studentIds: students.map (s) => s._id 
             courseId: course._id
             facilitatorId: facilitator._id
             owner: user._id

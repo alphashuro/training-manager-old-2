@@ -16,8 +16,8 @@ registrations-page
       tr( each='{data.registrations}' )
         td { course().title }
         td { facilitator().name }
-        td { students.length }
-        td { nextSession() ? moment(nextSession().date ).calendar() : 'None' }
+        td { students().count() }
+        td { nextSession() ? nextSession().calendar() : 'None' }
         td
           a( href="/registrations/detail/{_id}" ).btn.btn-default View
           button( onlick='{remove}' ).btn.btn-danger
