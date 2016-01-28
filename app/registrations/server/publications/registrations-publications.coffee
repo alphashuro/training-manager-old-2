@@ -16,7 +16,13 @@ Meteor.publishComposite 'registrations', {
     }
     {
       find: ( registration ) ->
-        return Students.find _id: $in: registration.students
+        return Students.find _id: $in: registration.studentIds
+      children: [
+        {
+          find: ( student ) ->
+            return Clients.find student.clientId
+        }
+      ]
     }
     {
       find: ( registration ) ->
@@ -43,7 +49,13 @@ Meteor.publishComposite 'registration', {
     }
     {
       find: ( registration ) ->
-        return Students.find _id: $in: registration.students
+        return Students.find _id: $in: registration.studentIds
+      children: [
+        {
+          find: ( student ) ->
+            return Clients.find student.clientId
+        }
+      ]
     }
     {
       find: ( registration ) ->
