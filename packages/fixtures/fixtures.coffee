@@ -206,14 +206,12 @@ resetSessions = ->
 
 Fixtures = {
   reset: -> 
-    @users.reset()
     @courses.reset()
     @clients.reset()
     @facilitators.reset()
     @registrations.reset()
 
   create: -> 
-    @users.create()
     @courses.create()
     @clients.create()
     @facilitators.create()
@@ -239,6 +237,10 @@ Fixtures = {
     create: createRegistrations
     reset: resetRegistrations
 }
+
+Meteor.startup ->
+  if Meteor.users.find().count() is 0 then Fixtures.users.create()
+  Fixtures.seed()
 
 Meteor.methods
   'fixtures/reset': ->
