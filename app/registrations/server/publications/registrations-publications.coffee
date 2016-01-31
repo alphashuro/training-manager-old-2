@@ -16,7 +16,8 @@ Meteor.publishComposite 'registrations', {
     }
     {
       find: ( registration ) ->
-        return Students.find _id: $in: registration.studentIds
+        if ( registration.studentIds ) 
+          return Students.find _id: $in: registration.studentIds
       children: [
         {
           find: ( student ) ->
