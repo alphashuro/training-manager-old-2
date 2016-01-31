@@ -31,6 +31,7 @@ registration-detail
           span.badge { calendar() } - { endTime() }
           | { class.title } | { class.duration } hrs
           //p ( R { class.price } )
+          //
 
   script( type='coffee' ).
     @getMeteorData = ->
@@ -48,4 +49,4 @@ registration-detail
       console.log student
     
     @save = (e) ->
-      e.preventDefault()
+      e.preventDefault()  
