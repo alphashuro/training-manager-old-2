@@ -252,3 +252,8 @@ Meteor.methods
 
   'fixtures/seed': ->
     Fixtures.seed()
+
+  'bookings/seed': ->
+    Fixtures.registrations.reset()
+    Fixtures.registrations.create()
+    return
