@@ -187,6 +187,7 @@ createRegistrations = ->
   createSessions()
 
 resetRegistrations = ->
+  resetSessions()
   Registrations.remove {}
 
 createSessions = ->
