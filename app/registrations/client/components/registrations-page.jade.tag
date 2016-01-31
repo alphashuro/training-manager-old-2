@@ -4,7 +4,7 @@ registrations-page
   .text-right
     a.btn.btn-default( href='/registrations/new' ) New Registration
 
-  table.table.table-hover
+  table.table.table-hover.registration-list
     thead
       tr
         th Course
@@ -13,7 +13,7 @@ registrations-page
         th Next Session
         th Actions
     tbody
-      tr( each='{data.registrations}' )
+      tr( each='{data.registrations}' ).registration-list-item
         td { course().title }
         td { facilitator().name }
         td { students().count() }
