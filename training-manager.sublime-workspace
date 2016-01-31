@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"add",
+				"addStudent	(registration-detail.jade.tag)"
+			],
+			[
+				"registration",
+				"registration_id"
+			],
+			[
+				"facilitato",
+				"facilitatorSelect"
+			],
+			[
 				"registra",
 				"registration"
 			],
@@ -128,10 +140,6 @@
 				"Facilitators"
 			],
 			[
-				"add",
-				"addUsersToRoles"
-			],
-			[
 				"op",
 				"opts"
 			],
@@ -144,37 +152,34 @@
 	"buffers":
 	[
 		{
-			"contents": "Local:    feature/registrations ~/Documents/projects/apps/aep/training-manager\nHead:     335d964 add helper for nextSession\n\n\nUntracked files:\n	app/registrations/_api/\n	app/registrations/client/components/add-registration.jade.tag\n	app/registrations/client/components/registration-detail.jade.tag\n	app/registrations/server/methods/\n\nChanges:\n	Modified   app/registrations/client/components/registrations-page.jade.tag\n\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash, Z = create stash including untracked files\n#    backspace = discard stash",
-			"settings":
-			{
-				"buffer_size": 1180,
-				"line_ending": "Unix",
-				"name": "*git-status*: training-manager",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
 			"file": "app/registrations/client/components/registration-detail.jade.tag",
 			"settings":
 			{
-				"buffer_size": 607,
+				"buffer_size": 1463,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/alpha/.bashrc",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 4063,
+				"buffer_size": 582,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/clients/client/components/client-detail.jade.tag",
+			"file": "app/registrations/client/components/add-students-modal.jade.tag",
 			"settings":
 			{
-				"buffer_size": 1758,
+				"buffer_size": 894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/courses/server/methods/classes-methods.coffee",
+			"settings":
+			{
+				"buffer_size": 750,
 				"line_ending": "Unix"
 			}
 		}
@@ -186,13 +191,21 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 348.0,
-		"last_filter": "coffee",
+		"height": 385.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
 				"coffee",
-				"Coffee: Display JavaScript"
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"riot",
+				"Set Syntax: Riot (Jade)"
+			],
+			[
+				"jade",
+				"Set Syntax: Jade"
 			],
 			[
 				"git status",
@@ -339,10 +352,6 @@
 				"HTML: Wrap Selection With Tag"
 			],
 			[
-				"jade",
-				"Set Syntax: Jade"
-			],
-			[
 				"git com",
 				"Git: Commit"
 			],
@@ -403,7 +412,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 529.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -424,36 +433,42 @@
 	},
 	"expanded_folders":
 	[
-		"/home/alpha/Documents/projects/apps/aep/training-manager",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/.meteor",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/_api",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/both",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/both/collections",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/client",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/client/components",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/core",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/core/client",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/courses",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/courses/both",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/courses/both/collections",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/courses/client",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/courses/client/components",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/_api",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/both",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/both/collections",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/client",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/client/components",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/server",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/server/publications",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/packages",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/packages/fixtures",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/packages/lib"
+		"/home/alpha/Documents/projects/training-manager",
+		"/home/alpha/Documents/projects/training-manager/app",
+		"/home/alpha/Documents/projects/training-manager/app/clients",
+		"/home/alpha/Documents/projects/training-manager/app/courses",
+		"/home/alpha/Documents/projects/training-manager/app/courses/server",
+		"/home/alpha/Documents/projects/training-manager/app/courses/server/methods",
+		"/home/alpha/Documents/projects/training-manager/app/courses/server/publications",
+		"/home/alpha/Documents/projects/training-manager/app/dashboard/client",
+		"/home/alpha/Documents/projects/training-manager/app/facilitators",
+		"/home/alpha/Documents/projects/training-manager/app/facilitators/server",
+		"/home/alpha/Documents/projects/training-manager/app/facilitators/server/methods",
+		"/home/alpha/Documents/projects/training-manager/app/facilitators/server/publications",
+		"/home/alpha/Documents/projects/training-manager/app/registrations",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/_api",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/both",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client/routes",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/server",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/server/methods",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/server/publications",
+		"/home/alpha/Documents/projects/training-manager/packages"
 	],
 	"file_history":
 	[
+		"/home/alpha/Documents/projects/training-manager/app/registrations/server/methods/registrations-methods.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/core/server/user-methods.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/server/publications/registrations-publications.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/clients/server/methods/students.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components/new-registration.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/_api/registrations-crud-api.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/clients/_api/clients-crud-api.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/facilitators/server/methods/facilitators-methods.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/clients/client/components/client-detail.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components/registration-detail.jade.tag",
+		"/home/alpha/.bashrc",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/server/publications/registrations-publications.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/both/collections/registrations-collection.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/client/components/registrations-page.jade.tag",
@@ -468,7 +483,6 @@
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/both/collections/sessions-collection.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/courses/both/collections/courses.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/riot_packages.json",
-		"/home/alpha/.bashrc",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/both/collections/clients.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/clients/client/components/clients-page.jade.tag",
 		"/home/alpha/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
@@ -571,17 +585,7 @@
 		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/both/routes/invoices.coffee",
 		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/collections/invoice-items.js",
 		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/server/publications.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/server/publications/invoices.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/server/methods.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/collections/invoices.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/client/components/invoices-list.jsx",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/collections/invoices.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/client/layout/app.jade.tag",
-		"/home/alpha/.config/sublime-text-3/Packages/SublimeLinter-contrib-eslint/README.md",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/.eslintrc",
-		"/home/alpha/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/client/script.coffee",
-		"/home/alpha/Desktop/training-manager/App/Core/client/tags/layout.jade.tag"
+		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/server/publications/invoices.js"
 	],
 	"find":
 	{
@@ -702,68 +706,70 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1180,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								345,
-								345
-							]
-						],
-						"settings":
-						{
-							"WordCountSyntax": "sublimegit status",
-							"__vi_external_disable": true,
-							"default_dir": "/home/alpha/Documents/projects/apps/aep/training-manager",
-							"draw_white_space": "none",
-							"git_repo": "/home/alpha/Documents/projects/apps/aep/training-manager",
-							"git_status": true,
-							"git_view": "status",
-							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/registrations/client/components/registration-detail.jade.tag",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 607,
+						"buffer_size": 1463,
 						"regions":
 						{
+							"active0":
+							{
+								"flags": 48,
+								"icon": "Packages/gitp/icons/1.png",
+								"regions":
+								[
+									[
+										378,
+										378
+									]
+								],
+								"scope": "gitp"
+							},
+							"active1":
+							{
+								"flags": 48,
+								"icon": "Packages/gitp/icons/2.png",
+								"regions":
+								[
+									[
+										1051,
+										1051
+									]
+								],
+								"scope": "gitp"
+							},
+							"active2":
+							{
+								"flags": 48,
+								"icon": "Packages/gitp/icons/3.png",
+								"regions":
+								[
+									[
+										1295,
+										1295
+									]
+								],
+								"scope": "gitp"
+							}
 						},
 						"selection":
 						[
 							[
-								272,
-								272
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "tag-jade",
-							"auto_complete": false,
-							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage"
+							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -773,64 +779,84 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/alpha/.bashrc",
+					"buffer": 1,
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4063,
+						"buffer_size": 582,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3599,
-								3599
+								582,
+								582
 							]
 						],
 						"settings":
 						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "shell-unix-generic",
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 2268.0,
+						"translation.x": -0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
-					"file": "app/clients/client/components/client-detail.jade.tag",
+					"buffer": 2,
+					"file": "app/registrations/client/components/add-students-modal.jade.tag",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1758,
+						"buffer_size": 894,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								183,
-								183
+								894,
+								894
 							]
 						],
 						"settings":
 						{
-							"WordCountSyntax": "tag-jade",
-							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage",
+							"open_with_edit": true,
+							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": -0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/courses/server/methods/classes-methods.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 750,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								750,
+								750
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -861,18 +887,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -904,12 +923,32 @@
 		"selected_items":
 		[
 			[
-				"registration-de",
-				"app/registrations/client/components/registration-detail.jade.tag"
+				"pakc",
+				"package.json"
+			],
+			[
+				"methods",
+				"app/courses/server/methods/classes-methods.coffee"
+			],
+			[
+				"studnets",
+				"app/clients/server/methods/students.coffee"
+			],
+			[
+				"registraions",
+				"app/registrations/server/methods/registrations-methods.coffee"
+			],
+			[
+				"api",
+				"app/clients/_api/clients-crud-api.coffee"
 			],
 			[
 				"registrations",
-				"app/registrations/client/components/registrations-page.jade.tag"
+				"app/registrations/_api/registrations-crud-api.coffee"
+			],
+			[
+				"registration-de",
+				"app/registrations/client/components/registration-detail.jade.tag"
 			],
 			[
 				"pack",
@@ -1048,6 +1087,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Documents/projects/alphashuro.com/alphashuro.com.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
@@ -1067,8 +1110,8 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 257.0,
+	"side_bar_visible": false,
+	"side_bar_width": 392.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
