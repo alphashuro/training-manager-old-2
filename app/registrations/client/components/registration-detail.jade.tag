@@ -15,6 +15,7 @@ registration-detail
     .col-md-6
       h3.page-header Learners Booked
         small  ({ data.registration.students().count() })
+        add-students-modal( name='addStudentsModal' onAddStudent="{ addStudent }" onRemoveStudent="{ removeStudent }" )
 
       .list-group
         a.list-group-item(each='{ data.registration.students().fetch() }' href='#')
@@ -40,5 +41,11 @@ registration-detail
       { registration }
     @mixin 'RiotMeteorData'
 
+    @addStudent = (student) ->
+      console.log student
+
+    @removeStudent = (student) ->
+      console.log student
+    
     @save = (e) ->
       e.preventDefault()
