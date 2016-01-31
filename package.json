@@ -1,0 +1,23 @@
+{
+  "name": "training-manager",
+  "version": "1.0.0",
+  "description": "A meteor app for managing a training company.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "cd tests/chimp && chimp --ddp=http://localhost:3000 --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphashuro/training-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alphashuro/training-manager/issues"
+  },
+  "homepage": "https://github.com/alphashuro/training-manager#readme"
+}
