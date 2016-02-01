@@ -1,5 +1,5 @@
 createCrudRoute = ( { plural, singular } ) ->
-  App.routes.private.route "/#{plural}", 
+  App.routes.private.route "/#{plural}",
     name: plural
     action: ->
       RiotLayout.render 'app-layout',
