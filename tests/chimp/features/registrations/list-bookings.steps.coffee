@@ -45,3 +45,6 @@ module.exports = ->
 
     expect(itemsAfterDeletion.value.length).toBe items.value.length-1
 
+  # Add/remove students
+  @When /^I select a client$/, ->
+    client.waitForExist '.select-client'
