@@ -33,6 +33,15 @@ module.exports = ->
     headerExists = client.waitForExist 'h2.page-header=Registration Detail'
     expect( headerExists ).toBe true
 
+  # Delete a booking
+  @Then /^I should be able to delete a booking$/, ->
     client.waitForExist '.registration-list-item'
-    itemsVisible = client.isVisible '.registration-list-item'
-    expect(itemsVisible.length > 0).toBe true
+    client.waitForExist '.delete-booking'
+    items = client.elements '.registration-list-item'
+
+    client.click '.delete-booking'
+
+    itemsAfterDeletion = client.elements '.registration-list-item'
+
+    expect(itemsAfterDeletion.value.length).toBe items.value.length-1
+
