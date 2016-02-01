@@ -20,6 +20,10 @@ module.exports = ->
     client.url url.resolve process.env.ROOT_URL, page
 
   @Then /^I'm able to see all bookings in the database$/, ->
+  @When /^I click "([^"]*)"$/, (button) ->
+    client.waitForExist button
+    client.click button
+
     client.waitForExist '.registration-list-item'
     itemsVisible = client.isVisible '.registration-list-item'
     expect(itemsVisible.length > 0).toBe true
