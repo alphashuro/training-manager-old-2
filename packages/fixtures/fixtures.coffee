@@ -1,7 +1,7 @@
 chance = new Chance('training-app-fixtures')
 
 # Users
-users = 
+users =
   orgs: [
     {
       org: 'AeP IT'
@@ -16,7 +16,7 @@ createUsers = ->
     userId = Accounts.createUser
       email: org.email
       password: org.password
-      profile: 
+      profile:
         org: org.org
 
     Roles.addUsersToRoles userId, 'admin'
@@ -49,13 +49,13 @@ createCourses = ->
 
 resetCourses = ->
   resetClasses()
-  
+
   App.Collections.Courses.remove {}
 
   # Classes
 classes = [
-  { 
-    title: 'Class 1' 
+  {
+    title: 'Class 1'
     description: 'A class for the course'
     duration: 2
     price: 1000
@@ -160,9 +160,9 @@ createFacilitators = ->
 resetFacilitators = ->
   Facilitators.remove {}
 
-# Registrations
+# Bookings
 
-createRegistrations = ->
+createBookings = ->
   users = Meteor.users.find().fetch()
 
   courses = App.Collections.Courses.find().fetch()
@@ -174,31 +174,30 @@ createRegistrations = ->
       for course in courses
         for client in clients
           students = client.students()
-            
-          registration = 
-            studentIds: students.map (s) => s._id 
+
+          booking =
+            studentIds: students.map (s) => s._id
             courseId: course._id
             facilitatorId: facilitator._id
             owner: user._id
 
-          Registrations.insert registration
-          
-  resetSessions()
+          Bookings.insert booking
+
   createSessions()
 
-resetRegistrations = ->
+resetBookings = ->
   resetSessions()
-  Registrations.remove {}
+  Bookings.remove {}
 
 createSessions = ->
-  registrations = App.Collections.Registrations.find().fetch()
+  bookings = App.Collections.Bookings.find().fetch()
 
-  for registration in registrations
-    sessions = registration.course().classes().fetch().map (c) => {
+  for booking in bookings
+    sessions = booking.course().classes().fetch().map (c) => {
       "class": c
     }
     for session in sessions
-      session.registrationId = registration._id
+      session.bookingId = booking._id
       session.date = chance.date { year: 2016, month : _.sample [ 0, 1, 2 ] }
       Sessions.insert session
 
@@ -206,19 +205,19 @@ resetSessions = ->
   Sessions.remove {}
 
 Fixtures = {
-  reset: -> 
+  reset: ->
     @courses.reset()
     @clients.reset()
     @facilitators.reset()
-    @registrations.reset()
+    @bookings.reset()
 
-  create: -> 
+  create: ->
     @courses.create()
     @clients.create()
     @facilitators.create()
-    @registrations.create()
+    @bookings.create()
 
-  seed: -> 
+  seed: ->
     Meteor.call 'fixtures/reset', ( error ) ->
       unless error then Meteor.call 'fixtures/create'
 
@@ -234,9 +233,9 @@ Fixtures = {
   facilitators:
     create: createFacilitators
     reset: resetFacilitators
-  registrations:
-    create: createRegistrations
-    reset: resetRegistrations
+  bookings:
+    create: createBookings
+    reset: resetBookings
 }
 
 # Meteor.startup ->
@@ -254,6 +253,5 @@ Meteor.methods
     Fixtures.seed()
 
   'bookings/seed': ->
-    Fixtures.registrations.reset()
-    Fixtures.registrations.create()
-    return
+    Fixtures.bookings.reset()
+    Fixtures.bookings.create()

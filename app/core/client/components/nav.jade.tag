@@ -3,9 +3,9 @@ nav-menu
     .container-fluid
       .navbar-header
         button.navbar-toggle.collapsed(
-          type='button' 
-          data-toggle='collapse' 
-          data-target='#main-navbar' 
+          type='button'
+          data-toggle='collapse'
+          data-target='#main-navbar'
           aria-expanded='false')
           span.sr-only Toggle navigation
           span.icon-bar
@@ -25,16 +25,16 @@ nav-menu
           li( role='presentation' )
             a(href='/facilitators') Facilitators
           li( role='presentation' )
-            a(href='/registrations') Registrations
-        
+            a(href='/bookings') Bookings
+
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle(
-              href='#' 
-              data-toggle='dropdown' 
-              role='button' 
-              aria-haspopup='true' 
-              aria-expanded='false' ) 
+              href='#'
+              data-toggle='dropdown'
+              role='button'
+              aria-haspopup='true'
+              aria-expanded='false' )
               | { data.user.emails[0].address }
               span.caret
             ul.dropdown-menu
