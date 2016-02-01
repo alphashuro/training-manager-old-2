@@ -141,6 +141,7 @@ training-manager:core@0.0.1
 training-manager:fixtures@0.0.1
 training-manager:lib@0.0.1
 training-manager:notifications@0.0.1
+tsega:bootstrap3-datetimepicker@4.17.37_1
 twbs:bootstrap@3.3.6
 u2622:persistent-session@0.4.4
 ui@1.0.8
