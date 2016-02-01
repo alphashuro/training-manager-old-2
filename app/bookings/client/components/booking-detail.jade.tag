@@ -27,11 +27,7 @@ booking-detail
         small  ({ data.booking.sessions().count() })
 
       .list-group
-        a.list-group-item(each='{ data.booking.sessions().fetch() }' href='#')
-          span.badge { calendar() } - { endTime() }
-          | { class.title } | { class.duration } hrs
-          //p ( R { class.price } )
-          //
+        session-list-item.list-group-item( each='{ data.booking.sessions().fetch() }' data="{ this }" )
 
   script( type='coffee' ).
     @getMeteorData = ->
@@ -41,6 +37,8 @@ booking-detail
 
       { booking }
     @mixin 'RiotMeteorData'
+
+
 
     @addStudent = (student) ->
       App.api.bookings.addStudent {
