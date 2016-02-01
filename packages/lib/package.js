@@ -26,14 +26,21 @@ Package.onUse(function(api) {
 
   api.use( packages.both );
   api.imply( packages.both );
-
   api.use( packages.server, 'server' );
   api.imply( packages.server, 'server' );
-
   api.use( packages.client, 'client' );
   api.imply( packages.client, 'client' );
 
-  api.addFiles('lib.js');
+  var files = {
+    client: [],
+    server: [],
+    both: ['lib.js', 'utils/router.coffee']
+  };
+
+  api.addFiles(files.both);
+  api.addFiles(files.server, 'server');
+  api.addFiles(files.client, 'client');
+
   api.export('App')
 });
 
