@@ -1,9 +1,9 @@
 Meteor.methods
-  'create/registration': ({ courseId, facilitatorId }) ->
+  'create/booking': ({ courseId, facilitatorId }) ->
     check courseId, String
     check facilitatorId, String
 
-    regId = Registrations.insert {
+    regId = Bookings.insert {
       courseId,
       facilitatorId
       owner: Meteor.userId()
@@ -11,9 +11,9 @@ Meteor.methods
     }
 
     course = Courses.findOne( courseId )
-    sessions = course.classes().fetch().map (c) => 
+    sessions = course.classes().fetch().map (c) =>
       'class': c
-      registrationId: regId
+      bookingId: regId
       owner: Meteor.userId()
 
     for session in sessions
@@ -21,24 +21,24 @@ Meteor.methods
 
     return regId
 
-  'addStudent/registration': ({ _id, studentId }) ->
+  'addStudent/booking': ({ _id, studentId }) ->
     check studentId, String
 
     student = Students.findOne studentId
     unless student then throw new Meteor.error 'student-doesnt-exist', 'That student does not exist in the database'
 
-    Registrations.update _id, {
+    Bookings.update _id, {
       $addToSet: studentIds: studentId
     }
 
-  'removeStudent/registration': ({ _id, studentId }) ->
+  'removeStudent/booking': ({ _id, studentId }) ->
     check studentId, String
 
-    Registrations.update _id, {
+    Bookings.update _id, {
       $pull : studentIds : studentId
     }
 
-  'remove/registration': ( _id ) ->
+  'remove/booking': ( _id ) ->
     check _id, String
 
-    Registrations.remove _id
+    Bookings.remove _id
