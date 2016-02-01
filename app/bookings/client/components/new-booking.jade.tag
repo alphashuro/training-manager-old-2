@@ -1,4 +1,4 @@
-new-registration
+new-booking
   h2.page-header New Booking
 
   form( onsubmit='{save}' name='addBookingForm' )
@@ -16,28 +16,14 @@ new-registration
             option Facilitator
             option( each='{ data.facilitators }' value='{ _id }' ) { name }
     button.btn.btn-success Save
-    //- .row
-    //-   .col-md-6
-    //-     h3 Add Learners
-    //-     .col-md-6
-    //-       label( for='clientSelect' ) Client
-    //-       select.form-control( name='clientSelect' onchange='{ clientChanged }' )
-    //-         option Clients
-    //-         option( each='{ data.clients }' value='{ _id }' ) { name }
-    //-     .col-md-6
-    //-       label( for='studentsSelect' multiple ) Students
-    //-       select.form-control( name='studentsSelect' )
-    //-         //option Students
-    //-         option( each='{ data.students }' value='{ _id }' ) { name }
-    //-       button.btn.btn-default(type='button' onclick='{addStudents}') Add
+
     //-   .col-md-6
     //-     h3 Schedule classes
     //-     .list-group
-    //-       .list-group.item(each='{ data.sessions }') 
+    //-       .list-group.item(each='{ data.sessions }')
     //-         p { class.title }
 
   script( type='coffee' ).
-    @selectedClient = ''
     @selectedCourse = ''
 
     @getMeteorData = ->
@@ -57,14 +43,11 @@ new-registration
 
     @mixin 'RiotMeteorData'
 
-    @on 'mount', -> 
+    @on 'mount', ->
       $('select').select2()
       $('select[name=studentsSelect]').select2(
         multiple: true
       )
-
-    @clientChanged = (e) ->
-      @selectedClient = e.currentTarget?.value
 
     @courseChanged = (e) ->
       @selectedCourse = e.currentTarget?.value
@@ -74,7 +57,7 @@ new-registration
 
       { courseSelect, facilitatorSelect } = addBookingForm
 
-      booking = 
+      booking =
         courseId: courseSelect.value
         facilitatorId: facilitatorSelect.value
 

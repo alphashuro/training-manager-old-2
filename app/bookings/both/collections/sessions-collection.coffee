@@ -10,6 +10,6 @@ Sessions.deny
   remove: -> true
 
 Sessions.helpers
-  registration: -> Registrations.findOne @registrationId
+  booking: -> Bookings.findOne @bookingId
   calendar: -> moment( @date ).calendar()
   endTime: -> moment( @date ).add( @class.duration, 'hours' ).format('LT')
