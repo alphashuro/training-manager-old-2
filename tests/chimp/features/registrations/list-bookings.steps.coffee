@@ -28,6 +28,11 @@ module.exports = ->
     listItemsExist = client.waitForExist item
     expect(listItemsExist).toBe true
 
+  # View a single booking
+  @Then /^I'm able to see the details of the booking$/, ->
+    headerExists = client.waitForExist 'h2.page-header=Registration Detail'
+    expect( headerExists ).toBe true
+
     client.waitForExist '.registration-list-item'
     itemsVisible = client.isVisible '.registration-list-item'
     expect(itemsVisible.length > 0).toBe true
