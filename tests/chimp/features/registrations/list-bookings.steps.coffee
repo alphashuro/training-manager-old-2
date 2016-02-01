@@ -17,7 +17,7 @@ module.exports = ->
     server.call 'bookings/seed'
 
   @When /^I visit "([^"]*)"$/, (page) ->
-    browser.url url.resolve process.env.ROOT_URL, page
+    client.url url.resolve process.env.ROOT_URL, page
 
   @Then /^I'm able to see all bookings in the database$/, ->
     client.waitForExist '.registration-list-item'
