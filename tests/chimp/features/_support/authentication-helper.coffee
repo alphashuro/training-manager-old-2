@@ -1,11 +1,12 @@
 module.exports = ->
   @Before ->
-    @authHelper = 
-      login: ->
-        browser.url "#{process.env.ROOT_URL}/login"
-        browser.waitForExist 'body *'
-        browser.setValue '#email', 'alpha@aepit.co.za'
-        browser.setValue '#password', 'password'
-        browser.click 'button=Login'
-        # client.executeAsync (d) =>
-        #   Meteor.loginWithPassword 'alpha@aepit.co.za', 'password', d
+    @authHelper =
+      login: (done) ->
+        client.url "#{process.env.ROOT_URL}/login"
+        client.waitForExist 'body *'
+        client.setValue '#email', 'alpha@aepit.co.za'
+        client.setValue '#password', 'password'
+        client.click 'button=Login'
+        client.waitForExist '.page-header=Dashboard'
+        console.log 'logged in'
+        done()
