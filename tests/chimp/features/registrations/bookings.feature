@@ -8,9 +8,8 @@ Feature: Bookings
     Given I am logged in
     And there are bookings in the database
     When I visit "/registrations"
-    Then I'm able to see all bookings in the database
+    Then I should see a list of ".booking-list-item"
 
-  @focus
   Scenario: Add a new booking
     Given I am logged in
     When I visit "/registrations/add"
@@ -20,12 +19,22 @@ Feature: Bookings
     Given I am logged in
     And there are bookings in the database
     When I visit "/registrations"
-    And I click the link to one of the bookings
+    And I click the ".view-booking"
     Then I'm able to see the details of the booking
 
   Scenario: Delete a booking
     Given I am logged in
     And there are bookings in the database
     When I visit "/registrations"
-    And I click the delete button on one of the bookings
-    Then the booking should be deleted
+    Then I should be able to delete a booking
+
+  @focus
+  Scenario: Add and remove students from a booking
+    Given I am logged in
+    And there are bookings in the database
+    When I visit "/registrations"
+    And I click ".view-booking"
+    And I click ".add-students"
+    And I select a client
+    Then I should see a list of ".student-list-item"
+    # And I shloud be able to toggle the
