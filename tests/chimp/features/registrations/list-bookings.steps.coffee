@@ -2,8 +2,16 @@ module.exports = ->
   url = require 'url'
 
   @Given /^I am logged in$/, (done) ->
-    @authHelper.login()
-    setTimeout done, 3000
+    client.url process.env.ROOT_URL
+    user = ->
+      return Meteor.user()
+
+    result = client.execute user
+    if result.value
+      console.log result
+      done()
+    else
+      @authHelper.login done
 
   @Given /^there are bookings in the database$/, ->
     server.call 'bookings/seed'
