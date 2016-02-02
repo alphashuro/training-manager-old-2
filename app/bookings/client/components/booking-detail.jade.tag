@@ -33,7 +33,14 @@ booking-detail
       h3.page-header Sessions Scheduled
 
       .list-group
-        session-list-item.list-group-item( each='{ data.booking.sessions().fetch() }' data="{ this }" )
+        .list-group-item(
+          onclick="{ parent.changeDate }"
+          each='{ data.sessions }'
+          data="{ this }"
+          style='cursor:pointer' )
+            p { class.title }
+            p { calendar() } - { endTime() }
+      change-date-modal(onsetdate="{ setDate }")
 
   script( type='coffee' ).
     @getMeteorData = ->
@@ -41,10 +48,20 @@ booking-detail
 
       booking = Bookings.findOne opts.booking_id
 
-      { booking }
+      sessions = booking.sessions().fetch()
+
+      { booking, sessions }
     @mixin 'RiotMeteorData'
 
+    @changeDate = (e) =>
+      { _id, date } = e.item
+      @tags['change-date-modal'].show( { sessionId: _id, date } )
 
+    @setDate = ({ sessionId, date }) ->
+      App.api.bookings.updateSession({
+        sessionId,
+        date
+      })
 
     @addStudent = (student) ->
       App.api.bookings.addStudent {
