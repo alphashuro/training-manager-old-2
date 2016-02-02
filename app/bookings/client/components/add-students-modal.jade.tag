@@ -64,8 +64,6 @@ add-students-modal
         opts.on_remove student
 
     @show = ->
-      $(@modal).modal(
+      $( @modal ).modal(
         show: true
-        backdrop: 'static'
-        keyboard: false
       )
