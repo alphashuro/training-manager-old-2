@@ -11,7 +11,7 @@ create = ( booking ) ->
   )
 
 update = ( booking ) ->
-  console.log( booking )
+  throw new Meteor.error( 'not-implemented', 'updating bookings has not been implemented yet.' )
 
 remove = ( _id ) ->
   Meteor.call(
