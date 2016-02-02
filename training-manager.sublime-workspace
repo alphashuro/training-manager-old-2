@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"date",
+				"datetimepicker"
+			],
+			[
 				"add",
 				"addStudent	(registration-detail.jade.tag)"
 			],
@@ -152,34 +156,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/registrations/client/components/registration-detail.jade.tag",
+			"file": "app/bookings/client/components/change-date-modal.jade.tag",
 			"settings":
 			{
-				"buffer_size": 1463,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 582,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/registrations/client/components/add-students-modal.jade.tag",
-			"settings":
-			{
-				"buffer_size": 894,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/courses/server/methods/classes-methods.coffee",
-			"settings":
-			{
-				"buffer_size": 750,
+				"buffer_size": 1394,
 				"line_ending": "Unix"
 			}
 		}
@@ -191,13 +171,45 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 385.0,
+		"height": 379.0,
 		"last_filter": "",
 		"selected_items":
 		[
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instlal",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Coffee: Display JavaScript"
+			],
+			[
+				"coffeelin",
+				"Coffee: Lint"
+			],
+			[
+				"new file",
+				"File: New File Relative to Project Root"
+			],
+			[
 				"coffee",
-				"Set Syntax: CoffeeScript"
+				"Coffee: Fast Compile"
+			],
+			[
+				"java",
+				"Coffee: Display JavaScript"
+			],
+			[
+				"lint",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"cofffee",
+				"Coffee: Compile File"
 			],
 			[
 				"riot",
@@ -214,10 +226,6 @@
 			[
 				"Package Control: disa",
 				"Package Control: Disable Package"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"remove pack",
@@ -268,10 +276,6 @@
 				"Set Syntax: CoffeeScript"
 			],
 			[
-				"",
-				"Coffee: Fast Compile"
-			],
-			[
 				"co",
 				"Coffee: Fast Compile"
 			],
@@ -308,16 +312,8 @@
 				"SublimeLinter: Show All Errors"
 			],
 			[
-				"lint",
-				"SublimeLinter: Toggle Linter"
-			],
-			[
 				"new fi",
 				"ANF: New File"
-			],
-			[
-				"instlal",
-				"Package Control: Install Package"
 			],
 			[
 				"rename",
@@ -412,7 +408,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 467.0
+		"width": 475.0
 	},
 	"console":
 	{
@@ -435,29 +431,48 @@
 	[
 		"/home/alpha/Documents/projects/training-manager",
 		"/home/alpha/Documents/projects/training-manager/app",
-		"/home/alpha/Documents/projects/training-manager/app/clients",
-		"/home/alpha/Documents/projects/training-manager/app/courses",
-		"/home/alpha/Documents/projects/training-manager/app/courses/server",
-		"/home/alpha/Documents/projects/training-manager/app/courses/server/methods",
-		"/home/alpha/Documents/projects/training-manager/app/courses/server/publications",
-		"/home/alpha/Documents/projects/training-manager/app/dashboard/client",
-		"/home/alpha/Documents/projects/training-manager/app/facilitators",
-		"/home/alpha/Documents/projects/training-manager/app/facilitators/server",
-		"/home/alpha/Documents/projects/training-manager/app/facilitators/server/methods",
-		"/home/alpha/Documents/projects/training-manager/app/facilitators/server/publications",
-		"/home/alpha/Documents/projects/training-manager/app/registrations",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/_api",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/both",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/client",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/client/routes",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/server",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/server/methods",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/server/publications",
-		"/home/alpha/Documents/projects/training-manager/packages"
+		"/home/alpha/Documents/projects/training-manager/app/bookings",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/_api",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/routes",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/server",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/server/methods",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/server/publications",
+		"/home/alpha/Documents/projects/training-manager/app/core",
+		"/home/alpha/Documents/projects/training-manager/app/core/client",
+		"/home/alpha/Documents/projects/training-manager/app/core/client/_utils",
+		"/home/alpha/Documents/projects/training-manager/app/core/client/components",
+		"/home/alpha/Documents/projects/training-manager/packages",
+		"/home/alpha/Documents/projects/training-manager/packages/fixtures",
+		"/home/alpha/Documents/projects/training-manager/packages/lib",
+		"/home/alpha/Documents/projects/training-manager/packages/lib/utils",
+		"/home/alpha/Documents/projects/training-manager/packages/notifications"
 	],
 	"file_history":
 	[
+		"/home/alpha/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/booking-detail.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/core/client/components/nav.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/_api/bookings-api.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/server/methods/session-methods.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/add-students-modal.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/change-date-modal.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/server/methods/bookings-methods.coffee",
+		"/home/alpha/Documents/projects/training-manager/app/core/client/_utils/notifications.coffee",
+		"/home/alpha/Documents/projects/training-manager/coffeelint.json",
+		"/home/alpha/.bashrc",
+		"/home/alpha/Documents/projects/training-manager/packages/fixtures/fixtures.coffee",
+		"/home/alpha/Documents/projects/ionic-test-app/.bashrc",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/session-list-item.jade.tag",
+		"/home/alpha/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/alpha/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/alpha/Documents/projects/training-manager/app/courses/server/methods/classes-methods.coffee",
+		"/home/alpha/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/alpha/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/alpha/Documents/projects/training-manager/package.json",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components/add-students-modal.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components/registration-detail.jade.tag",
 		"/home/alpha/Documents/projects/training-manager/app/registrations/server/methods/registrations-methods.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/core/server/user-methods.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/registrations/server/publications/registrations-publications.coffee",
@@ -467,8 +482,6 @@
 		"/home/alpha/Documents/projects/training-manager/app/clients/_api/clients-crud-api.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/facilitators/server/methods/facilitators-methods.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/clients/client/components/client-detail.jade.tag",
-		"/home/alpha/Documents/projects/training-manager/app/registrations/client/components/registration-detail.jade.tag",
-		"/home/alpha/.bashrc",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/server/publications/registrations-publications.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/both/collections/registrations-collection.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/client/components/registrations-page.jade.tag",
@@ -491,7 +504,6 @@
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/client/routes/registrations-routes.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/training-manager.sublime-project",
 		"/home/alpha/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/alpha/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/_api/registrations-crud-api.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/client/components/registration-detail.jade.tag",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/app/registrations/server/publications/registrations-publications.jade.tag",
@@ -566,30 +578,11 @@
 		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/courses/both/methods/remove.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/courses/both/methods/update.coffee",
 		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/courses/both/methods/insert.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/tests/jasmine/client/unit/auth/spec/loginSpec.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/client/components/script.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/client/components/layouts/default-layout.jade.tag",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/tests/jasmine/client/unit/auth/spec/signupSpec.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/client/_api/_signup.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/client/_api/_login.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/both/_api.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/both/api.coffee",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/_app/core/client/components/index.jade.tag",
-		"/home/alpha/Documents/projects/apps/aep/training-manager/training-manager.html",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/client/components/invoice-item.jsx",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/client/components/Invoice.jsx",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/.meteor/packages",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/client/components/invoice.jade.tag",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/client/components/invoice-item.jade.tag",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/client/components/invoice-list.jade.tag",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/both/routes/invoices.coffee",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/collections/invoice-items.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-riot/server/publications.js",
-		"/home/alpha/Documents/projects/apps/tutorials/meteor/dynamic-fields-react/1.2/server/publications/invoices.js"
+		"/home/alpha/Documents/projects/apps/aep/training-manager/tests/jasmine/client/unit/auth/spec/loginSpec.coffee"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -603,6 +596,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"@",
+			"//",
+			"ignore",
+			"ctrl+shift+d",
 			"length",
 			"clients",
 			"Clients",
@@ -682,6 +679,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"warn",
 			"registrations",
 			"phone",
 			"name",
@@ -706,165 +704,41 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/registrations/client/components/registration-detail.jade.tag",
+					"file": "app/bookings/client/components/change-date-modal.jade.tag",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1463,
+						"buffer_size": 1394,
 						"regions":
 						{
-							"active0":
-							{
-								"flags": 48,
-								"icon": "Packages/gitp/icons/1.png",
-								"regions":
-								[
-									[
-										378,
-										378
-									]
-								],
-								"scope": "gitp"
-							},
-							"active1":
-							{
-								"flags": 48,
-								"icon": "Packages/gitp/icons/2.png",
-								"regions":
-								[
-									[
-										1051,
-										1051
-									]
-								],
-								"scope": "gitp"
-							},
-							"active2":
-							{
-								"flags": 48,
-								"icon": "Packages/gitp/icons/3.png",
-								"regions":
-								[
-									[
-										1295,
-										1295
-									]
-								],
-								"scope": "gitp"
-							}
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1240,
+								1240
 							]
 						],
 						"settings":
 						{
+							"at_wb_tests_view": false,
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 582,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								582,
-								582
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 135.0,
+						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/registrations/client/components/add-students-modal.jade.tag",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 894,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								894,
-								894
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": -0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/courses/server/methods/classes-methods.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 750,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								750,
-								750
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -901,6 +775,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.coffeecompile_output":
+	{
+		"height": 356.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -909,11 +787,19 @@
 	{
 		"height": 118.0
 	},
+	"output.git-init":
+	{
+		"height": 112.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 178.0
+	},
 	"pinned_build_system": "",
 	"project": "training-manager.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -922,6 +808,42 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"booking-deta",
+				"app/bookings/client/components/booking-detail.jade.tag"
+			],
+			[
+				"cofflin",
+				"coffeelint.json"
+			],
+			[
+				"bookings-metho",
+				"app/bookings/server/methods/bookings-methods.coffee"
+			],
+			[
+				"bookings",
+				"app/bookings/_api/bookings-api.coffee"
+			],
+			[
+				"session",
+				"app/bookings/client/components/session-list-item.jade.tag"
+			],
+			[
+				"booking-de",
+				"app/bookings/client/components/booking-detail.jade.tag"
+			],
+			[
+				"cofffee",
+				"packages/fixtures/fixtures.coffee"
+			],
+			[
+				"coffe",
+				"packages/fixtures/fixtures.coffee"
+			],
+			[
+				"modal",
+				"app/bookings/client/components/add-students-modal.jade.tag"
+			],
 			[
 				"pakc",
 				"package.json"
@@ -1089,7 +1011,7 @@
 		[
 			[
 				"",
-				"~/Documents/projects/alphashuro.com/alphashuro.com.sublime-project"
+				"~/Documents/projects/ionic-test-app/ionic-test-project.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1110,8 +1032,8 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 392.0,
+	"side_bar_visible": true,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
