@@ -15,10 +15,17 @@ booking-detail
     .col-md-6
       h3.page-header Learners Booked
         small  ({ data.booking.students().count() })
-        add-students-modal( name='addStudentsModal' booking_id="{ opts.booking_id }" on_add="{ addStudent }" on_remove="{ removeStudent }" )
+        add-students-modal(
+          name='addStudentsModal'
+          booking_id="{ opts.booking_id }"
+          on_add="{ addStudent }"
+          on_remove="{ removeStudent }"
+        )
 
       .list-group
-        a.list-group-item(each='{ data.booking.students().fetch() }' href='#')
+        .list-group-item(
+          each='{ data.booking.students().fetch() }' href='#'
+        )
           span.badge { client().name }
           | { name }
           p { phone } | { email }
