@@ -37,6 +37,17 @@ removeStudent = ( { _id, studentId } ) ->
       App.utils.errorCb( error )
   )
 
+updateSession = ( { sessionId, date } ) ->
+  Meteor.call(
+    'update/session',
+    sessionId,
+    { date },
+    ( error ) ->
+      App.utils.errorCb( error )
+  )
+
 App.api.bookings = {
-  create, update, remove, addStudent, removeStudent
+  create, update, remove,
+  addStudent, removeStudent,
+  updateSession
 }
