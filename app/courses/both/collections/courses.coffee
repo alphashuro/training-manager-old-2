@@ -1,4 +1,4 @@
-App.Collections.Courses = new Mongo.Collection 'courses'
+App.Collections.Courses = @Courses = new Mongo.Collection 'courses'
 
 App.Collections.Courses.allow
   insert: -> false
@@ -15,3 +15,4 @@ App.Collections.Courses.deny
 App.Collections.Courses.helpers
   duration: -> 0
   price: -> 0
+  classes: -> App.Collections.Classes.find courseId: @_id

@@ -2,7 +2,7 @@ index
   .jumbotron.text-center
     h1 
       | Training Manager
-      small beta
+      small alpha
     p.lead Manage your training company with ease
 
     a(href='/signup').btn.btn-default Signup
