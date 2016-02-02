@@ -24,7 +24,6 @@ booking-detail
           p { phone } | { email }
     .col-md-6
       h3.page-header Sessions Scheduled
-        small  ({ data.booking.sessions().count() })
 
       .list-group
         session-list-item.list-group-item( each='{ data.booking.sessions().fetch() }' data="{ this }" )
