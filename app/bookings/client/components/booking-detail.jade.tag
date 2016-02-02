@@ -28,7 +28,9 @@ booking-detail
         )
           span.badge { client().name }
           | { name }
+          button.btn.btn-danger( onclick='{ removeStudent.bind( null, this ) }' ) Remove
           p { phone } | { email }
+
     .col-md-6
       h3.page-header Sessions Scheduled
 
