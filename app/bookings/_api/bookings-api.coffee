@@ -18,10 +18,7 @@ remove = ( _id ) ->
     'remove/booking',
     _id,
     ( error ) ->
-      if error
-        App.utils.notify.error( error.reason )
-      else
-        App.utils.notify.success( 'Booking Removed' )
+      App.utils.errorCb( error, 'Booking Removed' )
   )
 
 addStudent = ( { _id, studentId } ) ->
@@ -29,8 +26,7 @@ addStudent = ( { _id, studentId } ) ->
     'addStudent/booking',
     { _id, studentId } ,
     ( error ) ->
-      if error
-        App.utils.notify.error( error.reason )
+      App.utils.errorCb( error )
   )
 
 removeStudent = ( { _id, studentId } ) ->
@@ -38,8 +34,7 @@ removeStudent = ( { _id, studentId } ) ->
     'removeStudent/booking',
     { _id, studentId } ,
     ( error ) ->
-      if error
-        App.utils.notify.error( error.reason )
+      App.utils.errorCb( error )
   )
 
 App.api.bookings = {
