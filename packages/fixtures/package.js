@@ -1,6 +1,6 @@
 Package.describe({
   name: 'training-manager:fixtures',
-  version: '0.0.1',
+  version: '0.1.0',
   // Brief, one-line summary of the package.
   debugOnly: true,
   summary: 'database fixtures for the training manager',
@@ -14,8 +14,8 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.3-modules-beta.4');
   api.use([
-    'ecmascript', 
-    'coffeescript', 
+    'ecmascript',
+    'coffeescript',
     'training-manager:lib']);
   api.addFiles('fixtures.coffee', 'server');
 });
