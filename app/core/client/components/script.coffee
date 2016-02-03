@@ -1,0 +1,1 @@
+Riot.mixin 'RiotMeteorData', RiotMeteorData

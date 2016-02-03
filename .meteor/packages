@@ -1,0 +1,46 @@
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+baysao:riot-meteor-data
+baysao:riotjs
+baysao:riot-layout
+
+baysao:riotjs-preprocessor-init
+
+twbs:bootstrap
+alanning:roles
+accounts-base
+accounts-password
+
+kadira:flow-router
+coffeescript
+themeteorchef:bert
+#sanjo:jasmine
+#velocity:html-reporter
+check
+training-manager:fixtures
+meteortoys:allthings
+babrahams:constellation
+constellation:velocity
+yelongren:constellation-reload
+dburles:collection-helpers
+reywood:publish-composite
+training-manager:lib
+training-manager:core
+training-manager:notifications
+risul:chance
+constellation:schema
+fourquet:anti-gravity
+momentjs:moment
+natestrauser:select2
+tsega:bootstrap3-datetimepicker
+
+xolvio:backdoor
