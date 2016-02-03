@@ -156,11 +156,14 @@
 	"buffers":
 	[
 		{
-			"file": "app/bookings/client/components/change-date-modal.jade.tag",
+			"contents": "Remote:   origin @ git@github.com:alphashuro/training-manager.git\nLocal:    devel ~/Documents/projects/training-manager\nHead:     9b54291 Merged feature/registrations into devel\n\n\nChanges:\n	Modified   training-manager.sublime-workspace\n\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash, Z = create stash including untracked files\n#    backspace = discard stash",
 			"settings":
 			{
-				"buffer_size": 1394,
-				"line_ending": "Unix"
+				"buffer_size": 998,
+				"line_ending": "Unix",
+				"name": "*git-status*: training-manager",
+				"read_only": true,
+				"scratch": true
 			}
 		}
 	],
@@ -171,10 +174,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 379.0,
-		"last_filter": "",
+		"height": 330.0,
+		"last_filter": "git staut",
 		"selected_items":
 		[
+			[
+				"git staut",
+				"Git: Status"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -451,13 +458,13 @@
 	],
 	"file_history":
 	[
-		"/home/alpha/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/booking-detail.jade.tag",
+		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/change-date-modal.jade.tag",
+		"/home/alpha/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/alpha/Documents/projects/training-manager/app/core/client/components/nav.jade.tag",
 		"/home/alpha/Documents/projects/training-manager/app/bookings/_api/bookings-api.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/bookings/server/methods/session-methods.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/add-students-modal.jade.tag",
-		"/home/alpha/Documents/projects/training-manager/app/bookings/client/components/change-date-modal.jade.tag",
 		"/home/alpha/Documents/projects/training-manager/app/bookings/server/methods/bookings-methods.coffee",
 		"/home/alpha/Documents/projects/training-manager/app/core/client/_utils/notifications.coffee",
 		"/home/alpha/Documents/projects/training-manager/coffeelint.json",
@@ -582,7 +589,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -709,33 +716,35 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/bookings/client/components/change-date-modal.jade.tag",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1394,
+						"buffer_size": 998,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1240,
-								1240
+								380,
+								380
 							]
 						],
 						"settings":
 						{
+							"__vi_external_disable": true,
 							"at_wb_tests_view": false,
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Riot Tag/syntax/TAG-Jade.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
+							"default_dir": "/home/alpha/Documents/projects/training-manager",
+							"draw_white_space": "none",
+							"git_repo": "/home/alpha/Documents/projects/training-manager",
+							"git_status": true,
+							"git_view": "status",
+							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 399.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -746,7 +755,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -799,7 +808,7 @@
 	"project": "training-manager.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1032,7 +1041,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
