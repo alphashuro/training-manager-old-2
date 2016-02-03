@@ -23,8 +23,6 @@ accounts-password
 kadira:flow-router
 coffeescript
 themeteorchef:bert
-#sanjo:jasmine
-#velocity:html-reporter
 check
 training-manager:fixtures
 meteortoys:allthings
@@ -33,9 +31,6 @@ constellation:velocity
 yelongren:constellation-reload
 dburles:collection-helpers
 reywood:publish-composite
-training-manager:lib
-training-manager:core
-training-manager:notifications
 risul:chance
 constellation:schema
 fourquet:anti-gravity
@@ -44,3 +39,5 @@ natestrauser:select2
 tsega:bootstrap3-datetimepicker
 
 xolvio:backdoor
+
+training-manager:core-web

@@ -13,10 +13,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.3-modules-beta.4');
-  api.use([
-    'ecmascript',
-    'coffeescript',
-    'training-manager:lib']);
+  api.use(['training-manager:core-web']);
   api.addFiles('fixtures.coffee', 'server');
 });
 

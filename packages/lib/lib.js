@@ -1,14 +1,25 @@
-App = {
-  api: {},
-  Collections: {},
-  Services: {},
-  utils: {},
-  routes: {
-    public : FlowRouter.group(),
-    private : FlowRouter.group()
-  }
+'use strict';
+
+import { createCrudRoute as crudRoute } from './imports/utils.js';
+import { publicRoutes, privateRoutes } from './imports/route-groups.js';
+
+let api = {};
+let Collections = {};
+let services = {};
+let routes = {
+  "public": publicRoutes,
+  "private": privateRoutes
+};
+let utils = { crudRoute };
+
+const App = {
+  api,
+  Collections,
+  services,
+  utils,
+  routes
 };
 
-var global = this;
+export default App;
 
-global.App = App
+export { api, Collections, services, utils, routes };

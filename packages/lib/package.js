@@ -14,13 +14,20 @@ Package.onUse(function(api) {
   api.versionsFrom('1.3-modules-beta.4');
 
   var packages = {
-    client: [],
-    server: [],
+    client: [
+
+    ],
+    server: [
+
+    ],
     both: [
       'coffeescript',
       'ecmascript',
       'kadira:flow-router@2.10.0',
-      'risul:chance@1.0.8'
+      'risul:chance@1.0.8',
+      'mongo',
+      'modules',
+
     ]
   }
 
@@ -31,15 +38,18 @@ Package.onUse(function(api) {
   api.use( packages.client, 'client' );
   api.imply( packages.client, 'client' );
 
-  var files = {
-    client: [],
-    server: [],
-    both: ['lib.js', 'utils/router.coffee']
-  };
+  // var files = {
+  //   client: [],
+  //   server: [],
+  //   both: ['lib.js']
+  // };
 
-  api.addFiles(files.both);
-  api.addFiles(files.server, 'server');
-  api.addFiles(files.client, 'client');
+  // api.addFiles(files.both);
+  // // api.addFiles(files.server, 'server');
+  // api.addFiles(files.client, 'client');
+
+  api.mainModule('lib.js', 'client');
+  api.mainModule('lib.js', 'server');
 
   api.export('App')
 });
