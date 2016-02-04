@@ -36,7 +36,6 @@ constellation:tiny@0.4.0
 constellation:velocity@0.4.0
 cosmos:browserify@0.9.3
 dburles:collection-helpers@1.0.4
-dburles:eslint@1.0.1
 dburles:mongo-collection-instances@0.3.4
 ddp@1.2.2
 ddp-client@1.2.2-modules.5
@@ -128,6 +127,7 @@ training-manager:core-api@0.0.1
 training-manager:core-web@0.1.0
 training-manager:courses-api@0.0.1
 training-manager:courses-web@0.0.1
+training-manager:dashboard-web@0.0.1
 training-manager:facilitators-api@0.0.1
 training-manager:facilitators-web@0.0.1
 training-manager:lib@0.1.0
