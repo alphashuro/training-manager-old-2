@@ -1,7 +1,7 @@
 import Clients
   from 'meteor/training-manager:clients-api/collections/clients.js';
 import Students
-  from 'meteor/training-manager:clients-api/collections/Students.js';
+  from 'meteor/training-manager:clients-api/collections/students.js';
 
 Meteor.publishComposite('clients', {
   find: () => Clients.find({
