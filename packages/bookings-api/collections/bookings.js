@@ -13,12 +13,9 @@ Bookings.deny({
   remove: () => true,
 });
 
-import Facilitators
-  from 'meteor/training-manager:facilitators-api/collections/facilitators.js';
-import Courses
-  from 'meteor/training-manager:courses-api/collections/courses.js';
-import Students
-  from 'meteor/training-manager:students-api/collections/students.js';
+import { Collections } from 'meteor/training-manager:lib';
+
+const { Courses, Facilitators, Students } = Collections;
 
 Bookings.helpers({
   facilitator: () => Facilitators.findOne( this.facilitatorId ),
