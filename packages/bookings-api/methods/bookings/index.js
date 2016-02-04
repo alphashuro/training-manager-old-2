@@ -2,10 +2,10 @@ import Bookings
   from 'meteor/training-manager:bookings-api/collections/bookings.js';
 import Sessions
   from 'meteor/training-manager:bookings-api/collections/sessions.js';
-import Courses
-  from 'meteor/training-manager:courses-api/collections/courses.js';
-import Students
-  from 'meteor/training-manager:clients-api/collections/students.js';
+
+import { Collections } from 'meteor/training-manager:lib';
+
+const { Courses, Students } = Collections;
 
 Meteor.methods({
   'create/booking'({ courseId, facilitatorId }) {
