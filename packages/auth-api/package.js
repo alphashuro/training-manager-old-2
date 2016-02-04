@@ -10,7 +10,8 @@ Package.describe({
 Package.onUse(function authApiOnUse(api) {
   api.versionsFrom('1.3-modules-beta.5');
   api.use('training-manager:lib');
-  api.mainModule('auth-api.js');
+  api.mainModule('auth-api-server.js', 'server');
+  api.mainModule('auth-api-client.js', 'client');
 });
 
 Package.onTest(function authApiOnTest(api) {
