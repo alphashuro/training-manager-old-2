@@ -1,23 +1,23 @@
-var login;
-
-login = function(email, password) {
-  if (!email) {
-    App.utils.notify.error('Email not specified');
+/**
+ * (Async) Used to log a user in to the training manager app
+ * @param  {String}   email    The user's email address
+ * @param  {String}   password The user's password
+ * @param  {Function} cb       Called with null on success,
+ *                             with single error argument on failure
+ * @return none
+ */
+function login(email, password, cb) {
+  if ( !email ) {
+    cb( new Meteor.Error( 'email-missing', 'Email not specified' ) );
     return;
   }
-  if (!password) {
-    App.utils.notify.error('Password not specified');
+
+  if ( !password ) {
+    cb( new Meteor.Error( 'Password not specified' ) );
     return;
   }
-  return Meteor.loginWithPassword(email, password, (function(_this) {
-    return function(error) {
-      if (error) {
-        return App.utils.notify.error(error.reason);
-      } else {
-        return FlowRouter.go('/dashboard');
-      }
-    };
-  })(this));
-};
 
-App.api.login = login;
+  Meteor.loginWithPassword( email, password, cb );
+}
+
+export default login;

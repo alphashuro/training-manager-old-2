@@ -1,25 +1,29 @@
+import Facilitators
+  from 'meteor/training-manager:facilitators-api/collections/faciliatators.js';
+
 Meteor.publishComposite('facilitators', {
-  find: function() {
+  find() {
     if (this.userId) {
       if (!Roles.userIsInRole(this.userId, 'admin')) {
-        return;
+        return null;
       }
-      return App.Collections.Facilitators.find({
-        owner: this.userId
+      return Facilitators.find({
+        owner: this.userId,
       });
     }
-  }
+  },
 });
 
 Meteor.publishComposite('facilitator', {
-  find: function(_id) {
+  find(_id) {
     if (this.userId) {
       if (!Roles.userIsInRole(this.userId, 'admin')) {
-        return;
+        return null;
       }
-      return App.Collections.Facilitators.find({
-        owner: this.userId
+      return Facilitators.find({
+        _id,
+        owner: this.userId,
       });
     }
-  }
+  },
 });

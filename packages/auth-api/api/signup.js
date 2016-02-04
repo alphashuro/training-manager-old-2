@@ -1,30 +1,31 @@
-var signup;
-
-signup = function(arg) {
-  var email, org, password;
-  email = arg.email, password = arg.password, org = arg.org;
+/**
+ * (Async) used to sign a new user up to the Training-manager app
+ * @param  {string}   options.email    User's email
+ * @param  {string}   options.org      User's organization
+ * @param  {string}   options.password User's password
+ * @param  {Function} cb               Called with null on success,
+ *                                     with single error argument on failure
+ * @return none
+ */
+function signup( { email, org, password }, cb ) {
   if (!org) {
-    App.utils.notify.error('Organization name not specified');
+    cb( new Meteor.Error( 'org-missing', 'Organization name not specified' ) );
     return;
   }
   if (!email) {
-    App.utils.notify.error('Email not specified');
+    cb( new Meteor.Error( 'email-missing', 'Email not specified' ) );
     return;
   }
   if (!password) {
-    App.utils.notify.error('Passowrd not specified');
+    cb( new Meteor.Error( 'Password not specified' ) );
     return;
   }
-  return Meteor.call('create/user', {
-    email: email,
-    password: password,
-    org: org
-  }, function(error) {
-    if (error) {
-      App.utils.notify.error(error.reason);
-    }
-    return App.api.login(email, password);
-  });
-};
 
-App.api.signup = signup;
+  Meteor.call('create/user', {
+    email,
+    password,
+    org,
+  }, cb );
+}
+
+export default signup;

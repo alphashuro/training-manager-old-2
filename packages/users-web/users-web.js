@@ -1,1 +1,1 @@
-// Write your package code here!
+import './routes/index.js';

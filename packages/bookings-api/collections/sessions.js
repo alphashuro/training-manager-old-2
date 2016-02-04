@@ -4,39 +4,22 @@ import moment from 'moment';
 const Sessions = new Mongo.Collection('sessions');
 
 Sessions.allow({
-  insert: function() {
-    return false;
-  },
-  update: function() {
-    return false;
-  },
-  remove: function() {
-    return false;
-  }
+  insert: () => false,
+  update: () => false,
+  remove: () => false,
 });
 
 Sessions.deny({
-  insert: function() {
-    return true;
-  },
-  update: function() {
-    return true;
-  },
-  remove: function() {
-    return true;
-  }
+  insert: () => true,
+  update: () => true,
+  remove: () => true,
 });
 
 Sessions.helpers({
-  booking: function() {
-    return Bookings.findOne(this.bookingId);
-  },
-  calendar: function() {
-    return moment(this.date).calendar();
-  },
-  endTime: function() {
-    return moment(this.date).add(this["class"].duration, 'hours').format('LT');
-  }
+  booking: () => Bookings.findOne(this.bookingId),
+  calendar: () => moment(this.date).calendar(),
+  endTime: () =>
+    moment(this.date).add(this.class.duration, 'hours').format('LT'),
 });
 
 export default Sessions;

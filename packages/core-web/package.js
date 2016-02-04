@@ -1,31 +1,32 @@
+/* eslint no-var: 0*/
+
 Package.describe({
   name: 'training-manager:core-web',
   version: '0.1.0',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
-  documentation: 'README.md'
+  summary: 'Core web package for Training Manager.',
+  documentation: 'README.md',
 });
 
-Package.onUse(function(api) {
+Package.onUse(function coreWebOnUse(api) {
+  var packages;
   api.versionsFrom('1.3-modules-beta.4');
 
-  var packages = {
+  packages = {
     client: [],
     server: [],
     both: [
+      'training-manager:lib',
+      'training-manager:lib-web',
+      'training-manager:core-api',
+
       'training-manager:bookings-web',
       'training-manager:clients-web',
       'training-manager:courses-web',
       'training-manager:facilitators-web',
       'training-manager:users-web',
-
-      'training-manager:core-api',
-    ]
-  }
+      'training-manager:auth-web',
+    ],
+  };
 
   api.use( packages.both );
   api.imply( packages.both );
@@ -33,7 +34,7 @@ Package.onUse(function(api) {
   api.mainModule('core-web.js');
 });
 
-Package.onTest(function(api) {
+Package.onTest(function coreWebOnTest(api) {
   api.use('ecmascript');
   api.use('tinytest');
   api.use('training-manager:core-web');

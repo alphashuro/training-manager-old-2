@@ -1,5 +1,3 @@
-// Write your tests here!
-// Here is an example.
-Tinytest.add('example', function (test) {
+Tinytest.add('example', function coreWebExampleTest(test) {
   test.equal(true, true);
 });

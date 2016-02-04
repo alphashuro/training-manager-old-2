@@ -1,7 +1,19 @@
-import { Courses, Classes } from './collections/index.js';
-import App from 'meteor/training-manager:lib'
+import coursesApi from './api/index.js';
+import coursesCollections from './collections/index.js';
 
-App.Collections.Courses = Courses;
-App.Collections.Classes = Classes;
+import { Collections, api } from 'meteor/training-manager:lib';
 
-export { Courses, Classes };
+import './methods/all-methods.js';
+
+_.extend( Collections, coursesCollections );
+
+_.extend( api, coursesApi );
+
+let courses = {
+  api: coursesApi,
+  collections: coursesCollections,
+};
+
+export default courses;
+
+export { coursesApi, coursesCollections };

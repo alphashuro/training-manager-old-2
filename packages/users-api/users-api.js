@@ -1,2 +1,1 @@
-// Write your package code here!
-import './collections/users.js'
+import './collections/users.js';

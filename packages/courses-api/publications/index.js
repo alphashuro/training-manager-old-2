@@ -1,40 +1,46 @@
+import Courses
+  from 'meteor/training-manager:courses-api/collections/courses.js';
+import Classes
+  from 'meteor/training-manager:courses-api/collections/classes.js';
+
 Meteor.publishComposite('courses', {
-  find: function() {
+  find() {
     if (this.userId) {
       if (!Roles.userIsInRole(this.userId, 'admin')) {
-        return;
+        return null;
       }
-      return App.Collections.Courses.find({
-        owner: this.userId
+      return Courses.find({
+        owner: this.userId,
       });
     }
   },
   children: [
     {
-      find: function(course) {
-        return App.Collections.Classes.find({
-          courseId: course._id
+      find(course) {
+        return Classes.find({
+          courseId: course._id,
         });
-      }
-    }
-  ]
+      },
+    },
+  ],
 });
 
 Meteor.publishComposite('course', {
-  find: function(_id) {
+  find(_id) {
     if (this.userId) {
-      return App.Collections.Courses.find({
-        owner: this.userId
+      return Courses.find({
+        _id,
+        owner: this.userId,
       });
     }
   },
   children: [
     {
-      find: function(course) {
-        return App.Collections.Classes.find({
-          courseId: course._id
+      find(course) {
+        return Classes.find({
+          courseId: course._id,
         });
-      }
-    }
-  ]
+      },
+    },
+  ],
 });

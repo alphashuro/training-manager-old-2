@@ -1,55 +1,63 @@
+import Bookings
+  from 'meteor/training-manager:bookings-api/collections/bookings.js';
+import Sessions
+  from 'meteor/training-manager:bookings-api/collections/sessions.js';
+import Courses
+  from 'meteor/training-manager:courses-api/collections/courses.js';
+import Students
+  from 'meteor/training-manager:clients-api/collections/students.js';
+
 Meteor.methods({
-  'create/booking': function(arg) {
-    var course, courseId, facilitatorId, i, len, regId, session, sessions;
-    courseId = arg.courseId, facilitatorId = arg.facilitatorId;
+  'create/booking'({ courseId, facilitatorId }) {
     check(courseId, String);
     check(facilitatorId, String);
-    regId = Bookings.insert({
-      courseId: courseId,
-      facilitatorId: facilitatorId,
+
+    let regId = Bookings.insert({
+      courseId,
+      facilitatorId,
       owner: Meteor.userId(),
-      studentIds: []
+      studentIds: [],
     });
-    course = Courses.findOne(courseId);
-    sessions = course.classes().fetch().map(function(c) {
+
+    let course = Courses.findOne(courseId);
+    let sessions = course.classes().fetch().map( c => {
       return {
-        'class': c,
+        class: c,
         bookingId: regId,
-        owner: Meteor.userId()
+        owner: Meteor.userId(),
       };
     });
-    for (i = 0, len = sessions.length; i < len; i++) {
-      session = sessions[i];
-      Sessions.insert(session);
-    }
+
+    sessions.forEach( session => Sessions.insert(session) );
+
     return regId;
   },
-  'addStudent/booking': function(arg) {
-    var _id, student, studentId;
-    _id = arg._id, studentId = arg.studentId;
+
+  'addStudent/booking'({ _id, studentId }) {
     check(studentId, String);
-    student = Students.findOne(studentId);
+
+    let student = Students.findOne(studentId);
     if (!student) {
-      throw new Meteor.error('student-doesnt-exist', 'That student does not exist in the database');
+      throw new Meteor.Error(
+        'student-not-found',
+        'That student was not found in the database');
     }
-    return Bookings.update(_id, {
-      $addToSet: {
-        studentIds: studentId
-      }
+    return Bookings.update( _id, {
+      $addToSet: { studentIds: studentId },
     });
   },
-  'removeStudent/booking': function(arg) {
-    var _id, studentId;
-    _id = arg._id, studentId = arg.studentId;
+
+  'removeStudent/booking'({ _id, studentId}) {
     check(studentId, String);
-    return Bookings.update(_id, {
-      $pull: {
-        studentIds: studentId
-      }
+
+    return Bookings.update( _id, {
+      $pull: { studentIds: studentId },
     });
   },
-  'remove/booking': function(_id) {
+
+  'remove/booking'( _id ) {
     check(_id, String);
+
     return Bookings.remove(_id);
-  }
+  },
 });

@@ -1,28 +1,33 @@
-Meteor.methods
-  'create/student': ({ name, phone, clientId }) ->
-    check name, String
-    check phone, String
-    check clientId, String
+import Students
+  from 'meteor/training-manager:clients-api/collections/students.js';
 
-    Students.insert {
-      name,
-      phone,
-      clientId
-    }
+Meteor.methods({
+  'create/student'({ name, phone, clientId }) {
+    check(name, String);
+    check(phone, String);
+    check(clientId, String);
 
-  'update/student': ({ _id, name, phone }) ->
-    check _id, String
-    check name, String
-    check phone, String
+    return Students.insert({
+      name: name,
+      phone: phone,
+      clientId: clientId,
+    });
+  },
+  'update/student'({ _id, name, phone }) {
+    check(_id, String);
+    check(name, String);
+    check(phone, String);
 
-    Students.update _id, {
+    return Students.update(_id, {
       $set: {
-        name,
-        phone
-      }
-    }
+        name: name,
+        phone: phone,
+      },
+    });
+  },
+  'remove/student'(_id) {
+    check(_id, String);
 
-  'remove/student': ( _id ) ->
-    check _id, String
-
-    Students.remove _id
+    return Students.remove(_id);
+  },
+});

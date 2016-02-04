@@ -2,22 +2,32 @@
   "name": "training-manager",
   "version": "1.0.0",
   "description": "A meteor app for managing a training company.",
-  "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "cd tests/chimp && chimp --ddp=http://localhost:3000 --watch"
+    "test": "cd tests/chimp && chimp --ddp=http://localhost:3000 --watch",
+    "start-web": "cd tm-web && meteor",
+    "start-android": "cd tm-android && meteor run android",
+    "start-android-device": "cd tm-android && meteor run android-device"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alphashuro/training-manager.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alpha Shuro",
+  "license": "licence.txt",
   "bugs": {
     "url": "https://github.com/alphashuro/training-manager/issues"
   },
-  "homepage": "https://github.com/alphashuro/training-manager#readme"
+  "homepage": "https://github.com/alphashuro/training-manager#readme",
+  "eslintConfig" : {
+    "globals": {
+      "Roles": false,
+      "Riot": false,
+      "RiotLayout": false,
+      "FlowRouter": false
+    }
+  }
 }

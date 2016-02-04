@@ -1,36 +1,13 @@
-var create, remove, update;
+import create from './facilitators/create.js';
+import update from './facilitators/update.js';
+import remove from './facilitators/remove.js';
 
-create = function(facilitator) {
-  return Meteor.call('create/facilitator', facilitator, function(error) {
-    if (error) {
-      return App.utils.notify.error(error.reason);
-    } else {
-      App.utils.notify.success('Facilitator Created!');
-      return FlowRouter.go('/facilitators');
-    }
-  });
-};
-
-update = function(facilitator) {
-  return Meteor.call('update/facilitator', facilitator, function(error) {
-    if (error) {
-      return App.utils.notify.error(error.reason);
-    }
-  });
-};
-
-remove = function(_id) {
-  return Meteor.call('remove/facilitator', _id, function(error) {
-    if (error) {
-      return App.utils.notify.error(error.reason);
-    } else {
-      return App.utils.notify.success('Facilitator removed');
-    }
-  });
-};
-
-App.api.facilitators = {
+const api = {
   create,
   update,
-  remove
+  remove,
 };
+
+export default api;
+
+export { create, update, remove };

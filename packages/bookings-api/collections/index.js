@@ -1,4 +1,8 @@
-import Bookings from './bookings.js'
-import Sessions from './sessions.js'
+import Bookings from './bookings.js';
+import Sessions from './sessions.js';
 
-export { Bookings, Sessions }
+export { Bookings, Sessions };
+
+let collections = { Bookings, Sessions };
+
+export default collections;

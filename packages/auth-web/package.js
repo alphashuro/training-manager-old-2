@@ -1,22 +1,29 @@
+/* eslint no-var: 0*/
+
 Package.describe({
   name: 'training-manager:auth-web',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
-  documentation: 'README.md'
+  summary: 'Training Manager Authentication UI for web client',
+  documentation: 'README.md',
 });
 
-Package.onUse(function(api) {
+Package.onUse(function authWebOnUse(api) {
   api.versionsFrom('1.3-modules-beta.5');
-  api.use(['training-manager:auth-api']);
+  api.use([
+    'training-manager:lib-web',
+    'training-manager:auth-api',
+  ]);
   api.mainModule('auth-web.js');
+
+  // var components = [
+  //   'components/login.jade.tag',
+  //   'components/signup.jade.tag',
+  // ];
+
+  // api.addFiles(components, 'client');
 });
 
-Package.onTest(function(api) {
+Package.onTest(function authWebOnTest(api) {
   api.use('ecmascript');
   api.use('tinytest');
   api.use('training-manager:auth-web');

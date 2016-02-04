@@ -33,4 +33,6 @@ Package.onUse(function(api) {
       isAsset: true
     });
   }
+
+  api.addFiles('compile-riot.js');
 });
