@@ -14,6 +14,14 @@ Package.onUse(function onClientsWebUser(api) {
     'training-manager:clients-api',
   ]);
   api.mainModule('clients-web.js', 'client');
+
+  const components = [
+    'components/client-detail.jade.tag',
+    'components/clients-page.jade.tag',
+    'components/new-client.jade.tag',
+  ];
+
+  api.addFiles(components, 'client');
 });
 
 Package.onTest(function onClientsWebTest(api) {

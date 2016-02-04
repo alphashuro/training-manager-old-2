@@ -14,6 +14,14 @@ Package.onUse(function coursesWebOnUse(api) {
     'training-manager:courses-api',
   ]);
   api.mainModule('courses-web.js', 'client');
+
+  const components = [
+    'components/course-detail.jade.tag',
+    'components/courses-page.jade.tag',
+    'components/new-course.jade.tag',
+  ];
+
+  api.addFiles(components, 'client');
 });
 
 Package.onTest(function coursesWebOnTest(api) {

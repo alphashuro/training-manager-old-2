@@ -15,6 +15,14 @@ Package.onUse(function facilitatorsWebOnUse(api) {
   ]);
 
   api.mainModule('facilitators-web.js', 'client');
+
+  const components = [
+    'components/facilitator-detail.jade.tag',
+    'components/facilitators-page.jade.tag',
+    'components/new-facilitator.jade.tag',
+  ];
+
+  api.addFiles(components, 'client');
 });
 
 Package.onTest(function facilitatorsWebOnTest(api) {

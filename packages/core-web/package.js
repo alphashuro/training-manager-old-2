@@ -8,7 +8,7 @@ Package.describe({
 });
 
 Package.onUse(function coreWebOnUse(api) {
-  var packages;
+  var packages, components;
   api.versionsFrom('1.3-modules-beta.4');
 
   packages = {
@@ -25,6 +25,7 @@ Package.onUse(function coreWebOnUse(api) {
       'training-manager:facilitators-web',
       'training-manager:users-web',
       'training-manager:auth-web',
+      'training-manager:dashboard-web',
     ],
   };
 
@@ -32,6 +33,12 @@ Package.onUse(function coreWebOnUse(api) {
   api.imply( packages.both );
 
   api.mainModule('core-web.js');
+
+  components = [
+    'components/index.jade.tag',
+  ];
+
+  api.addFiles(components, 'client');
 });
 
 Package.onTest(function coreWebOnTest(api) {

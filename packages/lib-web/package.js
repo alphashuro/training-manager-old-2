@@ -36,6 +36,15 @@ Package.onUse(function onLibWebUse(api) {
   api.imply( packages.client, 'client' );
 
   api.mainModule('lib-web.js', 'client');
+
+  const components = [
+    'components/layouts/app-layout.jade.tag',
+    'components/layouts/nav.jade.tag',
+
+    'components/util/form-control.jade.tag',
+  ];
+
+  api.addFiles( components, 'client');
 });
 
 Package.onTest(function onLibWebTest(api) {

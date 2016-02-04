@@ -12,7 +12,13 @@ Package.onUse(function dashboardWebOnUse(api) {
   api.use([
     'training-manager:lib-web',
   ]);
-  api.addFiles('dashboard-web.js', 'client');
+  api.mainModule('dashboard-web.js', 'client');
+
+  const components = [
+    'components/dashboard.jade.tag',
+  ];
+
+  api.addFiles(components, 'client');
 });
 
 Package.onTest(function dashboardWebOnTest(api) {

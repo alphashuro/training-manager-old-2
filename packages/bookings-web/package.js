@@ -8,7 +8,6 @@ Package.describe({
 });
 
 Package.onUse(function bookingsWebOnUse(api) {
-  // var components;
 
   api.versionsFrom('1.3-modules-beta.5');
 
@@ -19,15 +18,15 @@ Package.onUse(function bookingsWebOnUse(api) {
 
   api.mainModule('bookings-web.js', 'client');
 
-  // var components = [
-  //   'components/add-students-modal.jade.tag',
-  //   'components/booking-detail.jade.tag',
-  //   'components/booking-page.jade.tag',
-  //   'components/change-date-modal.jade.tag',
-  //   'components/new-booking.jade.tag',
-  // ];
+  const components = [
+    'components/add-students-modal.jade.tag',
+    'components/booking-detail.jade.tag',
+    'components/booking-page.jade.tag',
+    'components/change-date-modal.jade.tag',
+    'components/new-booking.jade.tag',
+  ];
 
-  // api.addFiles( components, 'client' );
+  api.addFiles( components, 'client' );
 });
 
 Package.onTest(function bookingsWebOnTest(api) {
