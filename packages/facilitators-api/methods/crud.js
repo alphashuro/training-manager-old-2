@@ -1,5 +1,5 @@
 import Facilitators
-  from 'meteor/training-manager:facilitators-api/collections/facilitators.js';
+  from '../collections/facilitators.js';
 
 Meteor.methods({
 
