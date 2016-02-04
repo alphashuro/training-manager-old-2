@@ -25,7 +25,7 @@ Package.onUse(function onLibWebUse(api) {
     ],
     both: [
       'training-manager:lib',
-      'training-manager:lib-debug',
+      'alphashuro:lib-debug',
     ],
   };
 
