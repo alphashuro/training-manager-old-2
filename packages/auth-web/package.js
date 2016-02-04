@@ -13,14 +13,14 @@ Package.onUse(function authWebOnUse(api) {
     'training-manager:lib-web',
     'training-manager:auth-api',
   ]);
-  api.mainModule('auth-web.js');
+  api.mainModule('auth-web.js', 'client');
 
-  // var components = [
-  //   'components/login.jade.tag',
-  //   'components/signup.jade.tag',
-  // ];
+  const components = [
+    'components/login.jade.tag',
+    'components/signup.jade.tag',
+  ];
 
-  // api.addFiles(components, 'client');
+  api.addFiles(components, 'client');
 });
 
 Package.onTest(function authWebOnTest(api) {
