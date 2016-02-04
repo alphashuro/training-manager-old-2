@@ -13,20 +13,12 @@ signup
           button.btn.btn-success Sign Up
           a.btn.btn-default( href='/login' ) Login
 
-  script( type='coffee' ).
-    @signup = (e) ->
-      e.preventDefault();
-
+  script(type='coffee').
+    @signup = ->
       { org, email, password } = signupForm
-
       user = {
         email: email.value
         password: password.value
         org: org.value
       }
-
-      App.api.signup user, ( error ) ->
-        unless error
-          App.api.login user.email, user.password
-        else
-          App.utils.notify.error error.reason
+      opts.signup user

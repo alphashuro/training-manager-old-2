@@ -15,11 +15,7 @@ login
     @login = (e) ->
       e.preventDefault();
 
-      email = loginForm.email.value
-      password = loginForm.password.value
-
-      App.api.login email, password, (error) ->
-        unless error
-          FlowRouter.go '/dashboard'
-        else
-          App.utils.notify.error error.reason
+      opts.login({
+        email: loginForm.email.value,
+        password: loginForm.password.value,
+      });
