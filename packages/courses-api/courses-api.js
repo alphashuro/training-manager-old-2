@@ -7,7 +7,7 @@ import './methods/all-methods.js';
 
 _.extend( Collections, coursesCollections );
 
-_.extend( api, coursesApi );
+api.Courses = coursesApi;
 
 let courses = {
   api: coursesApi,

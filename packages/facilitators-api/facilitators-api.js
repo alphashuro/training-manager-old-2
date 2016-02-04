@@ -6,7 +6,8 @@ import './methods/crud.js';
 import { Collections, api } from 'meteor/training-manager:lib';
 
 _.extend( Collections, facilitatorsCollections );
-_.extend( api, facilitatorsApi );
+
+api.Facilitators = facilitatorsApi;
 
 const Facilitators = {
   collections: facilitatorsCollections,

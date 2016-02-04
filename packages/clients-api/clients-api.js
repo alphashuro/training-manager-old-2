@@ -7,7 +7,8 @@ import './methods/clients/index.js';
 import './methods/students/index.js';
 
 _.extend( Collections, clientsCollections );
-_.extend( api, clientsApi );
+
+api.Clients = clientsApi;
 
 let Clients = {
   collections: clientsCollections,

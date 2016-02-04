@@ -8,7 +8,7 @@ import { Collections, api } from 'meteor/training-manager:lib';
 _.extend( Collections, bookingsCollections );
 
 // Add API methods
-_.extend( api, bookingsApi );
+api.Bookings = bookingsApi;
 
 // Add Meteor methods
 import './methods/all-methods.js';
