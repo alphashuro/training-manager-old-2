@@ -14,7 +14,7 @@ An App for managing a training company.
 
 > Run
 
-    npm start-web
+    npm run-script start-web
 
 *Will launch at `localhost:3000`*
 
@@ -38,10 +38,10 @@ An App for managing a training company.
 
 > Run
 
-    npm start-android
+    npm run-script start-android
 
 > Run on a real device
 
-    npm start-android-device
+    npm run-script start-android-device
 
 *The device must be on the same network as the computer ( WiFi )*
