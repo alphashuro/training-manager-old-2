@@ -13,7 +13,12 @@ Npm.depends({
 
 Package.onUse(function bookingsApiOnUse(api) {
   api.versionsFrom('1.3-modules-beta.5');
-  api.use('training-manager:lib');
+  api.use([
+    'training-manager:lib',
+    'training-manager:facilitators-api',
+    'training-manager:courses-api',
+    'training-manager:clients-api',
+  ]);
   api.mainModule('bookings-api.js');
   api.mainModule('bookings-api-server.js', 'server');
 });
