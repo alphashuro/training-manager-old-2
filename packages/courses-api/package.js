@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:courses-api',
-  version: '0.2.0',
+  version: '0.3.0',
   summary: 'Courses ',
   documentation: 'README.md',
 });
