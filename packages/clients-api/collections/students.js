@@ -14,7 +14,9 @@ Students.deny({
 });
 
 Students.helpers({
-  client: () => Clients.findOne( this.clientId ),
+  client() {
+    return Clients.findOne( this.clientId );
+  },
 });
 
 export default Students;

@@ -4,26 +4,34 @@ import Students
   from 'meteor/training-manager:clients-api/collections/students.js';
 
 Meteor.publishComposite('clients', {
-  find: () => Clients.find({
-    owner: this.userId,
-  }),
+  find() {
+    return Clients.find({
+      owner: this.userId,
+    });
+  },
   children: [
     {
-      find: (client) => Students.find({
-        clientId: client._id,
-      }),
+      find(client) {
+        return Students.find({
+          clientId: client._id,
+        });
+      },
     },
   ],
 });
 
 Meteor.publishComposite('client', {
-  find: (_id) => Clients.find({
-    _id,
-    owner: this.userId,
-  }),
+  find(_id) {
+    return Clients.find({
+      _id,
+      owner: this.userId,
+    });
+  },
   children: [
     {
-      find: (client) => Students.find({ clientId: client._id }),
+      find(client) {
+        Students.find({ clientId: client._id });
+      },
     },
   ],
 });

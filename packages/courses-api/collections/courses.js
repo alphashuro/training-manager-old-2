@@ -15,12 +15,18 @@ Courses.deny({
 
 Courses.helpers({
   // Todo: calculate duration
-  duration: () => 0,
+  duration() {
+    return 0;
+  },
   // Todo: calculate price
-  price: () => 0,
-  classes: () => Classes.find({
-    courseId: this._id,
-  }),
+  price() {
+    return 0;
+  },
+  classes() {
+    return Classes.find({
+      courseId: this._id,
+    });
+  },
 });
 
 export default Courses;

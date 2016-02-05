@@ -16,10 +16,15 @@ Sessions.deny({
 });
 
 Sessions.helpers({
-  booking: () => Bookings.findOne(this.bookingId),
-  calendar: () => moment(this.date).calendar(),
-  endTime: () =>
-    moment(this.date).add(this.class.duration, 'hours').format('LT'),
+  booking() {
+    return Bookings.findOne(this.bookingId);
+  },
+  calendar() {
+    return moment(this.date).calendar();
+  },
+  endTime() {
+    return moment(this.date).add(this.class.duration, 'hours').format('LT');
+  },
 });
 
 export default Sessions;

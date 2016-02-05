@@ -18,14 +18,24 @@ import { Collections } from 'meteor/training-manager:lib';
 const { Courses, Facilitators, Students } = Collections;
 
 Bookings.helpers({
-  facilitator: () => Facilitators.findOne( this.facilitatorId ),
-  course: () => Courses.findOne( this.courseId ),
-  students: () => Students.find({ _id: { $in: this.studentIds }}),
-  nextSession: () => Sessions.findOne(
-    { bookingId: this._id, date: { $gt: new Date() } },
-    { $sort: { date: 1 } } ),
-  sessions: () => Sessions.find({ bookingId: this._id }),
-
+  facilitator() {
+    return Facilitators.findOne( this.facilitatorId );
+  },
+  course() {
+    return Courses.findOne( this.courseId );
+  },
+  students() {
+    return Students.find({ _id: { $in: this.studentIds }});
+  },
+  nextSession() {
+    return Sessions.findOne(
+      { bookingId: this._id, date: { $gt: new Date() } },
+      { $sort: { date: 1 } }
+    );
+  },
+  sessions() {
+    return Sessions.find({ bookingId: this._id });
+  },
 });
 
 export default Bookings;

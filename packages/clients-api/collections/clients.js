@@ -14,10 +14,11 @@ Clients.deny({
 });
 
 Clients.helpers({
-  students: () => Students.find({
-    clientId: this._id,
-  }),
+  students() {
+    return Students.find({
+      clientId: this._id,
+    });
+  },
 });
 
 export default Clients;
-
