@@ -16,7 +16,7 @@
     "deploy-web": "cd tm-web/.deploy/production && mup deploy",
 
     "stage-android": "cd tm-android/.deploy/staging && mup deploy",
-    "deploy-android": "cd tm-android/.deploy/production && mup deploy",
+    "deploy-android": "cd tm-android/.deploy/production && mup deploy"
   },
   "repository": {
     "type": "git",
