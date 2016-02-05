@@ -25,6 +25,7 @@ Package.onUse(function onLibWebUse(api) {
     ],
     both: [
       'training-manager:lib',
+      'training-manager:auth-api',
       'alphashuro:lib-debug',
       'baysao:riotjs-preprocessor-init',
     ],
