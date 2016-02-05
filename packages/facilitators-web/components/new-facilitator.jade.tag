@@ -26,9 +26,9 @@ new-facilitator
 
       { name, phone, email } = addFacilitatorForm
 
-      facilitator = 
+      facilitator =
         name: name.value
         phone: phone.value
         email: email.value
 
-      App.api.facilitators.create facilitator
+      opts.create facilitator

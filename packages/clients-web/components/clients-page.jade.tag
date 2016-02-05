@@ -25,17 +25,10 @@ clients-page
     @getMeteorData = ->
       Meteor.subscribe 'clients'
 
-      clients: App.Collections.Clients.find().fetch()
+      clients: opts.get.all()
     @mixin 'RiotMeteorData'
 
     @remove = (e) ->
       { _id, name } = e.item;
 
-      if confirm 'You are about to delete #{ name }, this is irreversible. Continue?'
-        App.api.clients.remove _id, function(error) {
-          if (error) {
-            return App.utils.notify.error(error.reason);
-          } else {
-            return App.utils.notify.success('Clients removed');
-          }
-        })
+      opts.remove _id

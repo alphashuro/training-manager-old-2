@@ -1,5 +1,5 @@
 courses-page
-  h2.page-header 
+  h2.page-header
     | Courses
   .text-right
     a.btn.btn-default(href='/courses/new') New Course
@@ -22,17 +22,15 @@ courses-page
         td R { price() }
         td
           a( href="/courses/detail/{_id}" ).btn.btn-default View
-          button( onclick='{remove}' ).btn.btn-danger 
+          button( onclick='{remove}' ).btn.btn-danger
             i.glyphicon.glyphicon-trash
 
   script( type='coffee' ).
     @getMeteorData = ->
-      Meteor.subscribe 'courses'
-
-      courses: App.Collections.Courses.find().fetch()
+      courses: opts.get.all()
     @mixin 'RiotMeteorData'
 
     @remove = (e) ->
       { _id, title } = e.item;
 
-      if confirm("You are about to delete #{ name }, this is irreversible. Continue?") then App.api.courses.remove _id
+      opts.remove _id

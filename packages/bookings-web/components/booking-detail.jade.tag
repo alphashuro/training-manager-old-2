@@ -46,11 +46,8 @@ booking-detail
 
   script( type='coffee' ).
     @getMeteorData = ->
-      Meteor.subscribe 'booking', @opts.booking_id
-
-      booking = Bookings.findOne opts.booking_id
-
-      sessions = booking.sessions().fetch()
+      booking = opts.get.one opts.booking_id
+      sessions = booking.sessions()?.fetch()
 
       { booking, sessions }
     @mixin 'RiotMeteorData'
@@ -60,25 +57,19 @@ booking-detail
       @tags['change-date-modal'].show( { sessionId: _id, date } )
 
     @setDate = ({ sessionId, date }) ->
-      App.api.bookings.updateSession {
+      opts.updateSession {
         sessionId,
         date
-      }, ( error ) ->
-        App.utils.errorCb error
+      }
 
     @addStudent = (student) ->
-      App.api.bookings.addStudent {
+      opts.addStudent {
         _id: opts.booking_id,
         studentId: student._id
-      }, ( error ) ->
-        App.utils.errorCb error
+      }
 
     @removeStudent = (student) ->
-      App.api.bookings.removeStudent {
+      opts.removeStudent {
         _id: opts.booking_id,
         studentId: student._id
-      }, ( error ) ->
-        App.utils.errorCb error
-
-    @save = (e) ->
-      e.preventDefault()
+      }

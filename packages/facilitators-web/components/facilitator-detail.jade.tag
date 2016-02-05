@@ -29,9 +29,7 @@ facilitator-detail
 
   script( type='coffee' ).
     @getMeteorData = ->
-      Meteor.subscribe 'facilitator', @opts.facilitator_id
-
-      facilitator: Facilitators.findOne @opts.facilitator_id
+      facilitator: opts.get.one opts.facilitator_id
     @mixin 'RiotMeteorData'
 
     @save = (e) ->
@@ -39,9 +37,9 @@ facilitator-detail
 
       { name, email, phone } = @editFacilitatorForm
 
-      App.api.facilitators.update {
-        _id: @opts.facilitator_id,  
+      opts.update {
+        _id: @opts.facilitator_id,
         name: name.value
-        phone: phone.value 
+        phone: phone.value
         email: email.value
       }

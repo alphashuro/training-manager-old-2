@@ -26,7 +26,7 @@ course-detail
         button.btn.btn-success Save
 
     .col-md-8
-      h3.page-header 
+      h3.page-header
         | Classes
         button.btn.btn-default New
 
@@ -62,20 +62,21 @@ course-detail
 
   script( type='coffee' ).
     @getMeteorData = ->
-      Meteor.subscribe 'course', @opts.course_id
+      course = opts.get.one( opts.course_id );
+      classes = course.classes().fetch();
 
-      course: App.Collections.Courses.findOne opts.course_id
-      classes: App.Collections.Classes.find({ courseId: opts.course_id }).fetch()
+      { course, classes }
     @mixin 'RiotMeteorData'
 
     @save = (e) ->
       e.preventDefault()
-
       { title, description, maxStudents } = @editCourseForm
 
-      App.api.courses.update {
-        _id: @opts.course_id,  
+      course = {
+        _id: @opts.course_id,
         title: title.value
-        description: description.value 
+        description: description.value
         maxStudents: parseInt(maxStudents.value)
       }
+
+      opts.update course

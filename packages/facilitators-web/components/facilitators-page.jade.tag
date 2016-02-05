@@ -1,5 +1,5 @@
 facilitators-page
-  h2.page-header 
+  h2.page-header
     | Facilitators
   .text-right
     a.btn.btn-default(href='/facilitators/new') New Facilitator
@@ -18,17 +18,13 @@ facilitators-page
         td { email }
         td
           a( href="/facilitators/detail/{_id}" ).btn.btn-default View
-          button( onclick='{remove}' ).btn.btn-danger 
+          button( onclick='{remove}' ).btn.btn-danger
             i.glyphicon.glyphicon-trash
 
   script( type='coffee' ).
-    @getMeteorData = ->
-      Meteor.subscribe 'facilitators'
-
-      facilitators: App.Collections.Facilitators.find().fetch()
+    @getMeteorData = =>
+      facilitators: opts.get.all()
     @mixin 'RiotMeteorData'
 
     @remove = (e) ->
-      { _id, name } = e.item;
-
-      if confirm("You are about to delete #{ name }, this is irreversible. Continue?") then App.api.facilitators.remove _id
+      opts.remove e.item._id

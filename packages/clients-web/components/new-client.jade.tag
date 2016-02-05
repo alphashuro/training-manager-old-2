@@ -31,9 +31,4 @@ new-client
         phone: phone.value
         email: email.value
 
-      App.api.clients.create client, (error) ->
-          if error
-            App.utils.notify.error(error.reason)
-          else
-            App.utils.notify.success('Client Created!')
-            FlowRouter.go('/clients')
+      opts.create client

@@ -25,15 +25,10 @@ bookings-page
 
   script( type='coffee' ).
     @getMeteorData = ->
-      Meteor.subscribe 'bookings'
-
-      bookings: App.Collections.Bookings.find().fetch()
+      bookings: opts.get.all()
     @mixin 'RiotMeteorData'
 
     @remove = (e) ->
       { _id, name } = e.item
 
-      App.api.bookings.remove _id, ( error ) ->
-        App.utils.errorCb error, 'Booking removed'
-      #if confirm 'You are about to delete a booking, this is irreversible. Continue?'
-      #  App.api.bookings.remove _id
+      opts.remove _id

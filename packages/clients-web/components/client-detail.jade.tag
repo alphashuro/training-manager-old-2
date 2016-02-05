@@ -56,10 +56,10 @@ client-detail
 
   script( type='coffee' ).
     @getMeteorData = ->
-      Meteor.subscribe 'client', @opts.client_id
+      client = opts.get.one opts.client_id
+      students = client.students().fetch()
 
-      client: App.Collections.Clients.findOne opts.client_id
-      students: App.Collections.Students.find({ clientId: opts.client_id }).fetch()
+      { client, students }
     @mixin 'RiotMeteorData'
 
     @save = (e) ->
@@ -67,13 +67,11 @@ client-detail
 
       { name, phone, email } = @editClientForm
 
-      App.api.clients.update {
+      client = {
         _id: @opts.client_id,
         name: name.value
         phone: phone.value
         email: email.value
-      }, function updateClientCb(error) {
-        if (error) {
-          return App.utils.notify.error(error.reason);
-        }
-      })
+      }
+
+      opts.update client;

@@ -26,9 +26,9 @@ new-course
 
       { title, description, maxStudents } = addCourseForm
 
-      course = 
+      course =
         title: title.value
         description: description.value
         maxStudents: parseInt( maxStudents.value )
 
-      App.api.courses.create course
+      opts.create course
