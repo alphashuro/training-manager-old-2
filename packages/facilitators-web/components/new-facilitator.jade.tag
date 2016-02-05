@@ -14,7 +14,7 @@ new-facilitator
         name='phone'
         label='Phone')
       form-control(
-        type='number'
+        type='email'
         name='email'
         label='Email')
 
