@@ -28,16 +28,19 @@ add-students-modal
         .modal-footer
           button.btn.btn-default(type='button' data-dismiss='modal') Close
 
+  script(type='es6').
+    import bookingsCrud from 'meteor/training-manager:bookings-web/api/crud.js';
+    import clientsCrud from 'meteor/training-manager:clients-web/api/crud.js';
+    opts.bookings = bookingsCrud;
+    opts.clients = clientsCrud;
+
   script( type='coffee' ).
     @selectedClient = ''
 
     @getMeteorData = ->
-      Meteor.subscribe 'booking', @opts.booking_id
-      booking = Bookings.findOne @opts.booking_id
-
-      Meteor.subscribe 'clients'
-      clients = Clients.find().fetch()
-      students = Clients.findOne(@selectedClient)?.students().fetch()
+      booking = opts.bookings.get.one @opts.booking_id
+      clients = opts.clients.get.all();
+      students = opts.clients.get.one( @selectedClient )?.students()?.fetch()
 
       return {
         booking
@@ -46,12 +49,6 @@ add-students-modal
       }
 
     @mixin 'RiotMeteorData'
-
-    @on 'mount', ->
-      $('select').select2()
-      #$('select[name=studentsSelect]').select2(
-      #  multiple: true
-      #)
 
     @clientChanged = (e) ->
       @selectedClient = e.currentTarget?.value

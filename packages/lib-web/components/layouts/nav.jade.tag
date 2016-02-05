@@ -53,8 +53,4 @@ nav-menu
       { user }
     @mixin 'RiotMeteorData'
 
-    @logout = ->
-      App.api.logout (error) ->
-        unless error
-          App.utils.notify.success 'Logged out.'
-          FlowRouter.go '/'
+    @logout = Meteor.logout
