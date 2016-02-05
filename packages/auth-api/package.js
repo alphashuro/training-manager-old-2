@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:auth-api',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Authentication API and methods for Training Manager',
   documentation: 'README.md',
 });

@@ -1,6 +1,6 @@
 {
   "name": "training-manager",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A meteor app for managing a training company.",
   "directories": {
     "test": "tests"

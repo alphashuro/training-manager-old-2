@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:bookings-api',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Booking api for Training Manager',
   documentation: 'README.md',
 });

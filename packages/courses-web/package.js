@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:courses-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Courses UI for the web version of Training Manager',
   documentation: 'README.md',
 });

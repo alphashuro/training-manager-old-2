@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:core-web',
-  version: '0.1.0',
+  version: '0.2.0',
   summary: 'Core web package for Training Manager.',
   documentation: 'README.md',
 });

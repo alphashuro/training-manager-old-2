@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:facilitators-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Facilitators UI package for Training Manager',
   documentation: 'README.md',
 });

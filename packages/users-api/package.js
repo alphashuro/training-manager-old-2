@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:users-api',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Users API of Training Manager',
   documentation: 'README.md',
 });
