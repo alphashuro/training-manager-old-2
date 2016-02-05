@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:users-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: '',
   documentation: 'README.md',
 });

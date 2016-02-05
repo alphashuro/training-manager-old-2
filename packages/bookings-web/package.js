@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:bookings-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Bookings web UI package for Training Manager',
   documentation: 'README.md',
 });

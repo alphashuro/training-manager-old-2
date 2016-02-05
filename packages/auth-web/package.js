@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:auth-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Training Manager Authentication UI for web client',
   documentation: 'README.md',
 });

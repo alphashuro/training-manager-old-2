@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:clients-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Clients UI for Training Manager web version.',
   documentation: 'README.md',
 });

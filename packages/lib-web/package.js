@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'training-manager:lib-web',
-  version: '0.0.1',
+  version: '0.2.0',
   summary: 'Lib package for web version of Training Manager',
   documentation: 'README.md',
 
