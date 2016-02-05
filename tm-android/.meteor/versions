@@ -1,0 +1,15 @@
+babel-compiler@6.4.0-modules.6
+babel-runtime@0.1.5-modules.6
+base64@1.0.5-modules.6
+check@1.1.1-modules.6
+ecmascript@0.4.0-modules.6
+ecmascript-runtime@0.2.7-modules.6
+ejson@1.0.8-modules.6
+meteor@1.1.11-modules.6
+meteor-env-dev@0.0.1-modules.6
+meteor-env-prod@0.0.1-modules.6
+modules@0.5.0-modules.6
+modules-runtime@0.5.0-modules.6
+promise@0.5.2-modules.6
+training-manager:core-android@0.0.1
+underscore@1.0.5-modules.6

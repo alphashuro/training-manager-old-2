@@ -1,14 +1,22 @@
-App = {
-  api: {},
-  Collections: {},
-  Services: {},
-  utils: {},
-  routes: {
-    public : FlowRouter.group(),
-    private : FlowRouter.group()
-  }
+import { publicRoutes, privateRoutes } from './imports/route-groups.js';
+
+let api = {};
+let Collections = {};
+let services = {};
+let routes = {
+  public: publicRoutes,
+  private: privateRoutes,
+};
+let utils = {};
+
+const App = {
+  api,
+  Collections,
+  services,
+  utils,
+  routes,
 };
 
-var global = this;
+export default App;
 
-global.App = App
+export { api, Collections, services, utils, routes };

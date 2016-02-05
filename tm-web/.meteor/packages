@@ -1,0 +1,5 @@
+# Main web app package
+training-manager:core-web
+
+
+baysao:riotjs-preprocessor-init

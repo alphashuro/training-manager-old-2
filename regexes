@@ -1,0 +1,35 @@
+fix functions
+find
+: function
+replace
+
+
+fix imports
+find
+(\w+)(\s+from .+/)(\w+)
+replace
+\1\2\1
+
+es6 objects declarations
+find
+(\w+): \1(,?)
+replace
+\1
+
+imports
+find
+import (\w+)(\s+from .+/)(\w+)
+replace
+import \1\2\1
+
+convert object functions that simply return value to es6
+find
+(\w+:) function\(\) \{\s+return (\w+);\s+\},?
+replace
+\1 () => \2,
+
+convert function vars to function declarations
+find
+(\w+) = function
+replace
+function \1
