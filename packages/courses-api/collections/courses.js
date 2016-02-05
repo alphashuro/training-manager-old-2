@@ -14,13 +14,15 @@ Courses.deny({
 });
 
 Courses.helpers({
-  // Todo: calculate duration
   duration() {
-    return 0;
+    let classes = this.classes().fetch();
+    let total = classes.reduce((prev, c) => prev + c.duration, 0);
+    return total;
   },
-  // Todo: calculate price
   price() {
-    return 0;
+    let classes = this.classes().fetch();
+    let total = classes.reduce((prev, c) => prev + c.price, 0);
+    return total;
   },
   classes() {
     return Classes.find({
