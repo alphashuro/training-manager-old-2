@@ -19,6 +19,9 @@ _.extend(utils, webUtils);
 
 export {
   webUtils,
+  createCrudRoutes,
+  notify,
+  errorCb,
 };
 
 let libWeb = {
